@@ -157,7 +157,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* ===== 01 개통 일정 ===== */
 .contents_div .gsl2-map{ margin-top:28px; }
-.contents_div .gsl2-map .gsl2-fig{ border:1px solid var(--c-line); }
+.contents_div .gsl2-map .gsl2-fig{ border:1px solid var(--c-blue-l); }
 .contents_div .gsl2-fig--map{ cursor:zoom-in; }
 .contents_div .gsl2-fig--map::before{ padding-top:calc(100% - 100px); }
 .contents_div .gsl2-fig--map .gsl2-map-bg{ object-fit:cover; filter:blur(18px); transform:scale(1.15); opacity:.85; }
@@ -233,7 +233,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gsl2-stops li:first-child,
 .contents_div .gsl2-stops li:last-child{ font-weight:700; color:var(--c-deep); }
 .contents_div .gsl2-stops li:not(:last-child)::after{
-  content:''; display:inline-block; vertical-align:middle; width:8px; height:2px; margin:0 2px 0 6px; border-radius:1px;
+  content:''; display:inline-block; vertical-align:middle; width:8px; height:2px; margin:0 2px 0 6px; border-radius:999px;
   background:var(--c-blue-l);
 }
 
@@ -492,6 +492,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-phase td{ display:block; padding:0; border:0; text-align:left; }
   .contents_div .gsl2-phase tbody th{ grid-column:1 / -1; }
   .contents_div .gsl2-phase td.gsl2-route{ grid-column:1 / -1; margin:4px 0 10px; }
+  .contents_div .gsl2-stops{ text-wrap:wrap; }
   .contents_div .gsl2-phase td[data-label]::before{ content:attr(data-label); display:block; font-size:var(--fs-label); font-weight:700; line-height:1.4; color:var(--c-sub); }
 
   .contents_div .gsl2-key{ margin-top:22px; }
