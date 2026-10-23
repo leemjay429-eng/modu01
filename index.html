@@ -1,0 +1,1078 @@
+<!-- 모바일 좌우 패딩 16 -->
+<script>
+if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
+  var s=document.createElement('style');
+  s.textContent='body{margin:0}@media(max-width:700px){.contents_div{padding:0 16px}}@media(max-width:576px){.contents_div br{display:inline!important}}';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+
+/* ===== 토큰 ===== */
+.contents_div .gsl2-wrap{
+  container-type:inline-size;
+  /* Title */
+  --fs-h2:clamp(20px, min(23px + (100cqi - 388px) * 0.02185, 22px + (100cqi - 343px) * 0.02223, 20px + (100cqi - 318px) * 0.08), 32px); --fs-foot:31px; --fs-h3:21px;
+  /* Body */
+  --fs-body:17px; --fs-lead:16px; --fs-info:16px; --fs-cta:16px; --fs-arrow:17px;
+  --fs-nav:16px; --fs-kicker:15px; --fs-num:14px; --fs-tagcap:13.5px;
+  --fs-label:13px; --fw-label:700; --fs-check:11px; --fs-caption:11px; --fs-hash:12.5px;
+  /* 간격 */
+  --gut:clamp(22px, 6.25%, 50px);
+  --band:clamp(40px, calc(7.9% + 6.8px), 70px);
+  --card-py:30px; --card-px:28px;
+  --kick:32px; --lb-h:24px; --lb-px:11px;
+  --img-ratio:62.5%;
+  /* 색 — 공정률 차트의 블루 계열 */
+  --c-ink:#1b2436; --c-sub:#4a5568; --c-line:#cfdbef;
+  --c-blue:#2160e0; --c-blue-l:#8fb3f5; --c-deep:#163a86; --c-navy:#172f63;
+  --c-bg1:#edf3fc; --c-bg2:#dce7f8; --c-bg3:#f4f1ea; --c-foot:#22345e;
+  --c-track:#e3eaf6;
+
+  max-width:800px; margin:0 auto;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.6; letter-spacing:-0.02em;
+  color:var(--c-ink); word-break:keep-all;
+}
+.contents_div .gsl2-wrap, .contents_div .gsl2-wrap *,
+.contents_div .gsl2-wrap *::before, .contents_div .gsl2-wrap *::after{ box-sizing:border-box; }
+.contents_div .gsl2-wrap :where(h1,h2,h3,p,ul,ol,li,dl,dt,dd,figure,table,address){ margin:0; padding:0; }
+.contents_div .gsl2-wrap :where(ul,ol){ list-style:none; }
+.contents_div .gsl2-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .gsl2-wrap :where(address){ font-style:normal; }
+.contents_div .gsl2-wrap :where(h1,h2,h3){ font-family:'Paperozi','Pretendard',sans-serif; word-break:keep-all; }
+.contents_div .gsl2-wrap :where(table){ border-collapse:collapse; width:100%; }
+
+/* 조건부 줄바꿈 */
+.contents_div .gsl2-br::before{ content:'\A'; white-space:pre; }
+.contents_div .gsl2-br--mo,
+.contents_div .gsl2-br--mo-wide,
+.contents_div .gsl2-br--m420{ display:none; }
+
+/* ===== 섹션 ===== */
+.contents_div .gsl2-sec{ width:100%; padding:var(--band) var(--gut); }
+.contents_div .gsl2-sec--1{ background:var(--c-bg1); }
+.contents_div .gsl2-sec--2{ background:var(--c-bg2); }
+.contents_div .gsl2-sec--3{ background:var(--c-bg1); }
+.contents_div .gsl2-sec--4{ background:var(--c-bg3); }
+.contents_div .gsl2-sec--5{ background:var(--c-bg2); }
+
+/* 이미지 */
+.contents_div .gsl2-fig{ position:relative; width:100%; overflow:hidden; background:#eee; }
+.contents_div .gsl2-fig::before{ content:''; display:block; padding-top:var(--img-ratio); }
+.contents_div .gsl2-fig img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+
+/* ===== 인트로 ===== */
+.contents_div .gsl2-intro{ background:var(--c-navy); color:#fff; }
+.contents_div .gsl2-intro-date{
+  display:inline-flex; align-items:center; height:var(--lb-h); padding:0 var(--lb-px);
+  border:1px solid rgba(255,255,255,.45); border-radius:3px;
+  font-size:var(--fs-label); font-weight:var(--fw-label); line-height:1; color:#d6e3fb;
+}
+.contents_div .gsl2-h1{
+  margin-top:14px; font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em; color:#fff;
+}
+.contents_div .gsl2-h1 em{ font-style:normal; color:var(--c-blue-l); }
+
+/* 앵커 내비 — 역 표지판 느낌의 각진 칸 */
+.contents_div .gsl2-nav{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin-top:48px;
+}
+.contents_div .gsl2-nav-btn{
+  appearance:none; -webkit-appearance:none; cursor:pointer; margin:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+  min-height:48px; padding:12px 4px;
+  background:rgba(255,255,255,.08); color:#fff;
+  border:1px solid rgba(255,255,255,.28); border-top:3px solid var(--c-blue-l); border-radius:3px;
+  font-family:inherit; font-size:var(--fs-nav); font-weight:700; line-height:1.4; letter-spacing:-0.03em;
+  text-align:center; word-break:keep-all;
+  transition:background .2s, border-color .2s, color .2s;
+}
+.contents_div .gsl2-nav-num{ font-size:var(--fs-num); font-weight:700; line-height:1; color:var(--c-blue-l); }
+.contents_div .gsl2-nav-btn[aria-current="true"]{ background:#fff; color:var(--c-navy); border-color:#fff; border-top-color:var(--c-blue); }
+.contents_div .gsl2-nav-btn[aria-current="true"] .gsl2-nav-num{ color:var(--c-blue); }
+.contents_div .gsl2-nav-btn:active{ background:rgba(255,255,255,.2); }
+
+/* ===== 공통 제목 ===== */
+.contents_div .gsl2-kicker{ --pin:calc((var(--kick) + 8px) * 1.1); display:flex; align-items:flex-start; gap:10px; position:relative; top:3px; }
+.contents_div .gsl2-kicker-pin{
+  position:relative; z-index:2; flex:0 0 auto; width:var(--pin); height:calc(var(--pin) * 1.21);
+}
+.contents_div .gsl2-kicker-pin::before{
+  content:''; position:absolute; left:0; top:0; width:var(--pin); height:var(--pin);
+  background:#fff; border:1.5px solid var(--c-blue); border-radius:50% 50% 12% 50%; transform:rotate(45deg);
+}
+.contents_div .gsl2-kicker-pin::after{
+  content:''; position:absolute; left:50%; top:calc(var(--pin) / 2); width:calc(var(--pin) * .64); height:calc(var(--pin) * .64);
+  transform:translate(-50%, -50%); background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232160e0' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.5 3h9A3 3 0 0 1 19.5 6v9a2.5 2.5 0 0 1-2.5 2.5H7A2.5 2.5 0 0 1 4.5 15V6A3 3 0 0 1 7.5 3z'/%3E%3Cpath d='M10 5.2h4'/%3E%3Crect x='7' y='7' width='10' height='4.5' rx='1'/%3E%3Ccircle cx='8.5' cy='14.3' r='.9' fill='%232160e0'/%3E%3Ccircle cx='15.5' cy='14.3' r='.9' fill='%232160e0'/%3E%3Cpath d='M8.5 18l-1.8 4.3M15.5 18l1.8 4.3M8 20.2h8'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.contents_div .gsl2-kicker-txt{ position:relative; z-index:1; margin-top:calc((var(--pin) - var(--kick)) / 2 + 5px); margin-left:calc(var(--pin) / -2 - 10px); }
+.contents_div .gsl2-kicker-txt{
+  display:inline-flex; align-items:center; height:var(--kick); padding:0 15px 0 calc(var(--pin) / 2 + 10px);
+  background:var(--c-blue); border:1px solid var(--c-blue); border-radius:3px; color:#fff;
+  font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:0.01em;
+}
+.contents_div .gsl2-h2{
+  margin-top:14px; font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em; color:var(--c-navy);
+}
+.contents_div .gsl2-h3{
+  font-size:var(--fs-h3); font-weight:700; line-height:1.45; color:var(--c-deep);
+}
+.contents_div .gsl2-lead{ margin-top:10px; font-size:var(--fs-lead); color:var(--c-sub); }
+.contents_div .gsl2-block{ margin-top:40px; }
+.contents_div .gsl2-block--sm{ margin-top:28px; }
+.contents_div .gsl2-note{ text-align:right; margin-top:10px; font-size:var(--fs-caption); line-height:1.35; color:var(--c-sub); }
+
+/* ===== 01 개통 일정 ===== */
+.contents_div .gsl2-map{ margin-top:28px; }
+.contents_div .gsl2-map .gsl2-fig{ border:1px solid var(--c-line); }
+.contents_div .gsl2-fig--map{ cursor:zoom-in; }
+.contents_div .gsl2-fig--map::before{ padding-top:calc(100% - 100px); }
+.contents_div .gsl2-fig--map .gsl2-map-bg{ object-fit:cover; filter:blur(18px); transform:scale(1.15); opacity:.85; }
+.contents_div .gsl2-fig--map .gsl2-map-img{ object-fit:contain; }
+.contents_div .gsl2-zoom-btn{
+  position:absolute; right:12px; bottom:12px; z-index:1;
+  display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 14px 0 12px;
+  background:rgba(23,47,99,.88); color:#fff; border-radius:3px;
+  font-size:var(--fs-label); font-weight:700; line-height:1;
+}
+.contents_div .gsl2-zoom-btn::before{ content:''; width:16px; height:16px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5L20 20M10.5 7.5v6M7.5 10.5h6'/%3E%3C/svg%3E") center/contain no-repeat; }
+.contents_div .gsl2-fig--map:focus-visible{ outline:3px solid var(--c-blue); outline-offset:2px; }
+
+/* 확대 보기 */
+.contents_div .gsl2-lightbox{
+  position:fixed; inset:0; z-index:99999; display:none;
+  background:rgba(10,20,44,.94); overflow:auto; overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+.contents_div .gsl2-lightbox.is-open{ display:block; }
+.contents_div .gsl2-lightbox:focus{ outline:0; }
+.contents_div .gsl2-lightbox-stage{
+  position:relative; width:-moz-fit-content; width:fit-content; max-width:100%; margin:0 auto; padding:56px 16px 24px;
+}
+.contents_div .gsl2-lightbox-img{
+  display:block; max-width:100%; max-height:calc(100vh - 80px); width:auto; height:auto; cursor:zoom-in;
+}
+.contents_div .gsl2-lightbox.is-zoom .gsl2-lightbox-stage{ width:100%; max-width:1232px; }
+.contents_div .gsl2-lightbox.is-zoom .gsl2-lightbox-img{ max-height:none; width:100%; cursor:zoom-out; }
+.contents_div .gsl2-lightbox-close{
+  appearance:none; -webkit-appearance:none; position:absolute; top:56px; left:calc(100% + 12px); z-index:1;
+  width:44px; height:44px; margin:0; padding:0; border:0; border-radius:50%; cursor:pointer;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23172f63' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center/20px 20px no-repeat;
+  box-shadow:0 4px 14px rgba(0,0,0,.35), 0 0 0 3px rgba(143,179,245,.55);
+  transition:transform .15s;
+}
+.contents_div .gsl2-lightbox.is-zoom .gsl2-lightbox-close{ position:fixed; top:10px; right:10px; left:auto; }
+.contents_div .gsl2-lightbox-hint{
+  position:fixed; left:50%; top:20px; transform:translateX(-50%);
+  font-size:var(--fs-label); font-weight:600; line-height:1; color:rgba(255,255,255,.75); white-space:nowrap; pointer-events:none;
+}
+.contents_div .gsl2-open{ margin-top:36px; padding-top:28px; border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-open-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); margin-top:22px;
+  border-top:1px solid var(--c-line);
+}
+.contents_div .gsl2-open-grid > div{ padding:16px 14px 16px 0; border-bottom:1px solid var(--c-line); }
+.contents_div .gsl2-open-grid > div + div{ padding-left:14px; border-left:1px solid var(--c-line); }
+.contents_div .gsl2-open-grid dt{ font-size:var(--fs-label); font-weight:700; line-height:1.3; color:var(--c-blue); }
+.contents_div .gsl2-open-grid dd{ margin-top:6px; font-size:var(--fs-info); font-weight:600; line-height:1.5; }
+.contents_div .gsl2-open-grid dd strong{ display:block; font-size:var(--fs-h3); font-weight:800; line-height:1.3; color:var(--c-navy); }
+
+/* ===== 02 특징 ===== */
+.contents_div .gsl2-chk{ display:flex; align-items:center; gap:8px; }
+.contents_div .gsl2-chk-ico{
+  flex:0 0 auto; display:flex; align-items:center; justify-content:center;
+  width:var(--lb-h); height:var(--lb-h); border-radius:50%;
+  background:var(--c-blue); color:#fff; font-family:'Pretendard',sans-serif;
+  font-size:var(--fs-check); font-weight:700; line-height:1;
+}
+
+/* 단계 표 */
+.contents_div .gsl2-phase{ margin-top:24px; background:#fff; border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-phase th,
+.contents_div .gsl2-phase td{ padding:14px 10px; border-bottom:1px solid var(--c-line); font-size:var(--fs-info); line-height:1.5; text-align:center; vertical-align:middle; }
+.contents_div .gsl2-phase thead th{ background:var(--c-bg1); font-weight:700; color:var(--c-deep); white-space:nowrap; }
+.contents_div .gsl2-phase tbody th{ font-weight:800; color:var(--c-blue); white-space:nowrap; }
+.contents_div .gsl2-phase td.gsl2-route{ text-align:left; }
+.contents_div .gsl2-phase td{ white-space:nowrap; }
+.contents_div .gsl2-phase td.gsl2-route{ white-space:normal; }
+.contents_div .gsl2-stops{ display:block; text-wrap:pretty; }
+.contents_div .gsl2-stops li{ display:inline; white-space:nowrap; }
+.contents_div .gsl2-stops li:first-child,
+.contents_div .gsl2-stops li:last-child{ font-weight:700; color:var(--c-deep); }
+.contents_div .gsl2-stops li:not(:last-child)::after{
+  content:''; display:inline-block; vertical-align:middle; width:8px; height:2px; margin:0 2px 0 6px; border-radius:1px;
+  background:var(--c-blue-l);
+}
+
+/* 요약 수치 */
+.contents_div .gsl2-key{ margin-top:28px; }
+.contents_div .gsl2-facts{ display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(255,255,255,.22); border-bottom:1px solid rgba(255,255,255,.22); }
+.contents_div .gsl2-facts > div{ padding:18px 0; }
+.contents_div .gsl2-facts > div + div{ padding-left:24px; border-left:1px solid rgba(255,255,255,.22); }
+.contents_div .gsl2-facts dt{ font-size:var(--fs-tagcap); font-weight:600; line-height:1.3; color:#c3d5f8; }
+.contents_div .gsl2-facts dd{ margin-top:6px; font-size:var(--fs-h2); font-weight:800; line-height:1.2; letter-spacing:-0.03em; color:#fff; white-space:nowrap; }
+.contents_div .gsl2-facts dd small{ display:block; margin-top:6px; font-size:var(--fs-tagcap); font-weight:500; letter-spacing:-0.02em; color:#c3d5f8; }
+.contents_div .gsl2-timeline{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); margin-top:26px; }
+.contents_div .gsl2-timeline::before{ content:''; position:absolute; left:7px; right:0; top:6px; height:2px; background:linear-gradient(to right, var(--c-blue-l), rgba(143,179,245,.25)); }
+.contents_div .gsl2-timeline li{ position:relative; padding:26px 10px 0 0; }
+.contents_div .gsl2-timeline li::before{
+  content:''; position:absolute; left:0; top:0; width:14px; height:14px; border-radius:50%;
+  background:var(--c-navy); box-shadow:inset 0 0 0 3px var(--c-blue-l);
+}
+.contents_div .gsl2-timeline li:first-child::before{ background:var(--c-blue-l); }
+.contents_div .gsl2-timeline time{ display:block; font-size:var(--fs-h3); font-weight:800; line-height:1.3; color:#fff; white-space:nowrap; }
+.contents_div .gsl2-timeline span{ display:block; margin-top:4px; font-size:var(--fs-tagcap); font-weight:500; line-height:1.3; color:#c3d5f8; }
+
+/* 특징 목록 */
+.contents_div .gsl2-feats{
+  display:grid; grid-template-columns:1fr 1fr; gap:0 32px; margin-top:12px;
+}
+.contents_div .gsl2-feats > li{ padding:20px 0; border-bottom:1px solid #b9cbe9; }
+.contents_div .gsl2-feats strong{ font-size:var(--fs-body); font-weight:700; line-height:1.4; color:var(--c-navy); }
+.contents_div .gsl2-feat-desc{ margin-top:6px; font-size:var(--fs-lead); color:var(--c-sub); }
+
+/* 차량 사양 */
+.contents_div .gsl2-spec-wrap{ margin-top:20px; }
+.contents_div .gsl2-box{ display:grid; grid-template-columns:1.7fr 1fr 1fr; border-top:2px solid var(--c-navy); border-bottom:1px solid #b9cbe9; }
+.contents_div .gsl2-box > div{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:18px 18px 20px; }
+.contents_div .gsl2-box > div:first-child{ padding-left:0; }
+.contents_div .gsl2-box > div + div{ border-left:1px solid #b9cbe9; }
+.contents_div .gsl2-lb{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  height:var(--lb-h); padding:0 var(--lb-px); border-radius:999px;
+  background:var(--c-deep); color:#fff;
+  font-size:var(--fs-label); font-weight:var(--fw-label); line-height:1; white-space:nowrap;
+}
+.contents_div .gsl2-box dd{ font-size:var(--fs-info); line-height:1.5; font-weight:600; }
+.contents_div .gsl2-box dd strong{ color:var(--c-blue); font-weight:800; }
+.contents_div .gsl2-dots{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:16px; }
+.contents_div .gsl2-dots > li{
+  display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;
+  padding:20px 14px; background:rgba(255,255,255,.6); white-space:nowrap; border-radius:3px;
+  font-size:var(--fs-lead); font-weight:500; line-height:1.5; color:var(--c-ink);
+}
+.contents_div .gsl2-dots > li::before{
+  content:''; flex:0 0 auto; width:44px; height:44px; border-radius:50%;
+  background:#fff center/24px 24px no-repeat;
+}
+.contents_div .gsl2-dots > li:nth-child(1)::before{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23163a86' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='12' rx='2'/%3E%3Cpath d='M8 20h8M12 16v4M6.5 10h2.5l1.5-2.5 2 5 1.5-2.5h3.5'/%3E%3C/svg%3E"); }
+.contents_div .gsl2-dots > li:nth-child(2)::before{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23163a86' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z'/%3E%3Cpath d='M9 12l2.2 2.2L15.5 10'/%3E%3C/svg%3E"); }
+.contents_div .gsl2-dots > li:nth-child(3)::before{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23163a86' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9h10.5a2.75 2.75 0 1 0-2.75-2.75M3 13h15a3 3 0 1 1-3 3M3 17h7'/%3E%3C/svg%3E"); }
+
+/* ===== 03 공정률 ===== */
+.contents_div .gsl2-prog-head{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.contents_div .gsl2-prog-date{ font-size:var(--fs-label); font-weight:600; color:var(--c-sub); }
+.contents_div .gsl2-dash{ margin-top:16px; background:#fff; border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-total{ display:grid; grid-template-columns:auto 1fr; align-items:center; gap:28px; padding:var(--card-py) var(--card-px); border-bottom:1px solid var(--c-line); }
+.contents_div .gsl2-total-lb{ font-size:var(--fs-info); font-weight:700; line-height:1.4; color:var(--c-deep); }
+.contents_div .gsl2-total-val{ margin-top:2px; font-size:var(--fs-h2); font-weight:800; line-height:1.2; letter-spacing:-0.03em; color:var(--c-blue); font-variant-numeric:tabular-nums; }
+.contents_div .gsl2-total-bar{
+  height:14px; border-radius:3px; overflow:hidden;
+  background:linear-gradient(to right, var(--c-blue) 0 88.99%, var(--c-blue-l) 88.99% 90.32%, var(--c-track) 90.32% 100%);
+}
+.contents_div .gsl2-legend{ display:flex; flex-wrap:wrap; gap:4px 18px; margin-top:12px; }
+.contents_div .gsl2-legend > div{ display:flex; align-items:center; gap:6px; font-size:var(--fs-label); line-height:1.5; }
+.contents_div .gsl2-legend dt{ display:flex; align-items:center; gap:6px; color:var(--c-sub); }
+.contents_div .gsl2-legend dt::before{ content:''; width:8px; height:8px; border-radius:2px; background:var(--c-track); }
+.contents_div .gsl2-legend > div:nth-child(1) dt::before{ background:var(--c-blue); }
+.contents_div .gsl2-legend > div:nth-child(2) dt::before{ background:var(--c-blue-l); }
+.contents_div .gsl2-legend dd{ font-weight:700; }
+.contents_div .gsl2-month{ display:grid; grid-template-columns:150px 1fr; gap:16px; align-items:start; padding:20px var(--card-px); }
+.contents_div .gsl2-month + .gsl2-month{ border-top:1px dashed var(--c-line); }
+.contents_div .gsl2-month-tit{ font-size:var(--fs-info); font-weight:700; line-height:1.5; color:var(--c-deep); padding-top:5px; }
+.contents_div .gsl2-month-tit span{ display:block; font-size:var(--fs-label); font-weight:600; color:var(--c-blue); }
+.contents_div .gsl2-chips{ display:flex; flex-wrap:wrap; gap:6px; }
+.contents_div .gsl2-chips li{ padding:5px 12px; background:var(--c-bg1); border-radius:3px; font-size:var(--fs-lead); line-height:1.5; color:var(--c-ink); }
+.contents_div .gsl2-month--plan .gsl2-chips li{ background:#fff; box-shadow:inset 0 0 0 1px var(--c-line); }
+
+/* 분야별 표 */
+.contents_div .gsl2-prog{ margin-top:16px; background:#fff; border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-prog th,
+.contents_div .gsl2-prog td{ padding:11px 12px; border-bottom:1px solid var(--c-line); font-size:var(--fs-info); line-height:1.4; }
+.contents_div .gsl2-prog thead th{ background:var(--c-bg1); font-size:var(--fs-label); font-weight:700; color:var(--c-deep); text-align:right; white-space:nowrap; }
+.contents_div .gsl2-prog thead th:first-child{ text-align:left; }
+.contents_div .gsl2-prog tbody th{ text-align:left; font-weight:700; width:100%; }
+.contents_div .gsl2-prog td{ text-align:right; white-space:nowrap; color:var(--c-sub); font-variant-numeric:tabular-nums; }
+.contents_div .gsl2-prog td:last-child{ font-weight:800; color:var(--c-blue); }
+.contents_div .gsl2-field{ display:flex; align-items:center; gap:14px; }
+.contents_div .gsl2-field-name{ flex:0 0 4.2em; }
+.contents_div .gsl2-bar{
+  flex:1 1 auto; position:relative; height:10px; border-radius:2px; overflow:hidden;
+  background:linear-gradient(to right, var(--c-blue) 0 var(--a), var(--c-blue-l) var(--a) calc(var(--a) + var(--b)), var(--c-track) calc(var(--a) + var(--b)) 100%);
+}
+.contents_div .gsl2-cta{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  min-height:56px; margin-top:24px; padding:14px 22px;
+  background:var(--c-blue); color:#fff; text-decoration:none; border-radius:3px;
+  font-size:var(--fs-cta); font-weight:700; line-height:1.45;
+  transition:background .2s;
+}
+.contents_div .gsl2-cta:visited{ color:#fff; }
+.contents_div .gsl2-cta-arrow{ flex:0 0 auto; font-size:var(--fs-arrow); line-height:1; }
+.contents_div .gsl2-cta:active{ background:var(--c-deep); }
+
+/* ===== 04 운행 효과 ===== */
+.contents_div .gsl2-cost{ display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
+.contents_div .gsl2-cost-val{ margin-top:8px; font-size:var(--fs-h3); font-weight:800; line-height:1.4; color:var(--c-navy); }
+.contents_div .gsl2-cost-val small{ display:inline-block; white-space:nowrap; font-size:var(--fs-info); font-weight:600; color:var(--c-sub); }
+.contents_div .gsl2-split{ display:flex; height:var(--kick); margin-top:14px; border-radius:3px; overflow:hidden; }
+.contents_div .gsl2-split span{ display:flex; align-items:center; padding:0 12px; font-size:var(--fs-label); font-weight:700; line-height:1; color:#fff; white-space:nowrap; }
+.contents_div .gsl2-split span:first-child{ width:60%; background:var(--c-deep); }
+.contents_div .gsl2-split span:last-child{ width:40%; background:var(--c-blue-l); color:var(--c-navy); }
+.contents_div .gsl2-num-list > li{ display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid #ddd3c0; font-size:var(--fs-info); line-height:1.5; }
+.contents_div .gsl2-num-list > li:first-child{ border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-num-list .gsl2-chk-ico{ background:var(--c-deep); }
+
+.contents_div .gsl2-save{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:36px; }
+.contents_div .gsl2-save > li{ padding:20px 18px; background:var(--c-navy); color:#fff; border-radius:3px; font-size:var(--fs-info); line-height:1.5; }
+.contents_div .gsl2-save .gsl2-chk-ico{ background:var(--c-blue-l); color:var(--c-navy); }
+.contents_div .gsl2-save p{ margin-top:10px; }
+.contents_div .gsl2-save strong{ color:#a9c6fa; font-weight:800; }
+
+.contents_div .gsl2-effects{ margin-top:16px; }
+.contents_div .gsl2-effects > li{ padding:20px 0; border-bottom:1px solid #ddd3c0; }
+.contents_div .gsl2-effects > li:first-child{ border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-effects > li > .gsl2-chk strong{ font-size:var(--fs-body); font-weight:700; line-height:1.45; color:var(--c-navy); }
+.contents_div .gsl2-sub{ margin-top:10px; padding-left:32px; }
+.contents_div .gsl2-sub li{ position:relative; padding:3px 0 3px 12px; font-size:var(--fs-lead); line-height:1.5; color:var(--c-sub); }
+.contents_div .gsl2-sub li::before{ content:''; position:absolute; left:0; top:calc(3px + 0.75em); width:6px; height:1px; background:var(--c-sub); }
+.contents_div .gsl2-sub strong{ color:var(--c-blue); font-weight:700; }
+.contents_div .gsl2-eco{ margin-top:14px; background:#fff; }
+.contents_div .gsl2-eco th,
+.contents_div .gsl2-eco td{ padding:12px 16px; border-bottom:1px solid #e6dfd1; font-size:var(--fs-info); line-height:1.4; }
+.contents_div .gsl2-eco thead th{ background:var(--c-navy); color:#fff; font-size:var(--fs-label); font-weight:700; text-align:left; }
+.contents_div .gsl2-eco thead th:last-child,
+.contents_div .gsl2-eco td{ text-align:right; }
+.contents_div .gsl2-eco tbody th{ text-align:left; font-weight:600; }
+.contents_div .gsl2-eco td{ font-weight:800; color:var(--c-deep); white-space:nowrap; }
+
+/* ===== 05 질문 ===== */
+.contents_div .gsl2-faq{ margin-top:24px; border-top:2px solid var(--c-navy); }
+.contents_div .gsl2-faq-item{ border-bottom:1px solid #b9cbe9; }
+.contents_div .gsl2-faq-q{
+  position:relative; display:block; cursor:pointer; list-style:none;
+  padding:20px 44px 20px 0;
+}
+.contents_div .gsl2-faq-q::-webkit-details-marker{ display:none; }
+.contents_div .gsl2-faq-q::marker{ content:''; }
+.contents_div .gsl2-faq-q::before,
+.contents_div .gsl2-faq-q::after{
+  content:''; position:absolute; right:8px; top:50%; width:14px; height:2px; margin-top:-1px;
+  background:var(--c-blue); transition:transform .25s;
+}
+.contents_div .gsl2-faq-q::after{ transform:rotate(90deg); }
+.contents_div .gsl2-faq-item[open] .gsl2-faq-q::after{ transform:rotate(0deg); }
+.contents_div .gsl2-faq-q .gsl2-chk{ align-items:flex-start; }
+.contents_div .gsl2-faq-mark{
+  flex:0 0 auto; display:flex; align-items:center; justify-content:center;
+  width:var(--kick); height:var(--kick); border-radius:3px; background:var(--c-navy); color:#fff;
+  font-family:'Pretendard',sans-serif; font-size:var(--fs-num); font-weight:800; line-height:1;
+}
+.contents_div .gsl2-faq-q .gsl2-h3{ padding-top:calc((var(--kick) - 1.45em) / 2); }
+.contents_div .gsl2-faq-a{ padding:0 0 24px calc(var(--kick) + 8px); }
+.contents_div .gsl2-faq-a p{ font-size:var(--fs-body); }
+.contents_div .gsl2-faq-a p + p,
+.contents_div .gsl2-faq-a p + ul,
+.contents_div .gsl2-faq-a ul + p{ margin-top:10px; }
+.contents_div .gsl2-faq-a .gsl2-num-list > li:first-child{ border-top:1px solid #b9cbe9; }
+.contents_div .gsl2-faq-a .gsl2-num-list > li{ border-bottom-color:#b9cbe9; }
+.contents_div .gsl2-faq-a .gsl2-num-list .gsl2-chk-ico{ background:var(--c-blue); }
+.contents_div .gsl2-call-head{ margin-bottom:10px; font-size:var(--fs-body); font-weight:700; color:var(--c-navy); }
+.contents_div .gsl2-call-tit{ font-size:var(--fs-info); font-weight:700; color:var(--c-deep); }
+.contents_div .gsl2-call{ display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:6px; margin-top:10px; }
+.contents_div .gsl2-call > div{ padding:10px 12px; background:#fff; border-radius:3px; }
+.contents_div .gsl2-call dt{ font-size:var(--fs-label); font-weight:700; color:var(--c-blue); line-height:1.4; }
+.contents_div .gsl2-call dd{ margin-top:2px; font-size:var(--fs-info); line-height:1.4; }
+.contents_div .gsl2-call a{ color:var(--c-ink); text-decoration:none; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.contents_div .gsl2-web{ margin-top:16px; }
+
+/* ===== 푸터 ===== */
+.contents_div .gsl2-foot{ background:var(--c-foot); color:#fff; }
+.contents_div .gsl2-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.contents_div .gsl2-tags li{
+  display:inline-flex; align-items:center; padding:6px 12px;
+  border:1px solid rgba(255,255,255,.35); border-radius:3px;
+  font-size:var(--fs-hash); line-height:1.35; color:#d6e3fb;
+}
+
+/* ===== hover ===== */
+@media (hover:hover) and (pointer:fine){
+  .contents_div .gsl2-nav-btn:hover{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.6); }
+  .contents_div .gsl2-nav-btn[aria-current="true"]:hover{ background:#fff; }
+  .contents_div .gsl2-cta:hover{ background:var(--c-deep); }
+  .contents_div .gsl2-lightbox-close:hover{ transform:scale(1.08); }
+  .contents_div .gsl2-faq-q:hover .gsl2-h3{ color:var(--c-blue); }
+}
+
+/* ===== 반응형 ===== */
+@media (max-width:600px){
+  .contents_div .gsl2-wrap{
+    --fs-foot:clamp(18px, calc(18px + (100vw - 375px) * 0.0857), 21px);
+    --fs-h3:clamp(16px, calc(16px + (100vw - 375px) * 0.0286), 17px);
+    --fs-body:clamp(13.5px, calc(13.5px + (100vw - 375px) * 0.0143), 14px);
+    --fs-lead:var(--fs-body); --fs-info:var(--fs-body); --fs-cta:var(--fs-body);
+    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:10px; --fs-num:10px; --fs-tagcap:10px;
+    --fs-label:10px; --fw-label:400; --fs-check:10px; --fs-caption:10px;
+    --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
+    --gut:22px;
+    --card-py:22px; --card-px:17px;
+    --kick:22px; --lb-h:17px; --lb-px:7px;
+    --img-ratio:75%;
+  }
+  .contents_div .gsl2-br--web{ display:none; }
+  .contents_div .gsl2-br--mo,
+  .contents_div .gsl2-br--mo-wide{ display:inline; }
+
+  .contents_div .gsl2-h1,
+  .contents_div .gsl2-h2{ line-height:1.4; }
+  .contents_div .gsl2-h3{ line-height:1.5; }
+  .contents_div .gsl2-kicker-txt{ padding:0 11px 0 calc(var(--pin) / 2 + 8px); line-height:1; }
+  .contents_div .gsl2-block{ margin-top:32px; }
+  .contents_div .gsl2-block--sm{ margin-top:24px; }
+
+  .contents_div .gsl2-nav{ gap:4px; margin-top:42px; }
+  .contents_div .gsl2-nav-btn{ gap:4px; padding:10px 2px; line-height:1.35; }
+
+  .contents_div .gsl2-map{ margin-top:22px; }
+  .contents_div .gsl2-fig--map::before{ display:none; }
+  .contents_div .gsl2-fig--map .gsl2-map-bg{ display:none; }
+  .contents_div .gsl2-fig--map .gsl2-map-img{ position:static; width:100%; height:auto; aspect-ratio:auto 3 / 4; }
+  .contents_div .gsl2-zoom-btn{ right:8px; bottom:8px; height:30px; padding:0 10px 0 9px; gap:5px; }
+  .contents_div .gsl2-zoom-btn::before{ width:14px; height:14px; }
+  .contents_div .gsl2-lightbox-hint{ left:16px; top:24px; transform:none; }
+  .contents_div .gsl2-lightbox-close,
+  .contents_div .gsl2-lightbox.is-zoom .gsl2-lightbox-close{ position:fixed; top:10px; right:10px; left:auto; }
+  .contents_div .gsl2-lightbox.is-zoom .gsl2-lightbox-stage{ width:200%; max-width:none; }
+  .contents_div .gsl2-open{ margin-top:28px; padding-top:22px; }
+  .contents_div .gsl2-open-grid{ grid-template-columns:1fr 1fr; margin-top:16px; }
+  .contents_div .gsl2-open-grid > div,
+  .contents_div .gsl2-open-grid > div + div{ padding:12px 10px 12px 0; border-left:0; }
+  .contents_div .gsl2-open-grid > div:nth-child(even){ padding-left:10px; border-left:1px solid var(--c-line); }
+  .contents_div .gsl2-open-grid dd{ margin-top:4px; }
+
+  /* 단계 표 → 블록 */
+  .contents_div .gsl2-phase thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .contents_div .gsl2-phase tbody,
+  .contents_div .gsl2-phase tr{ display:block; }
+  .contents_div .gsl2-phase tr{ display:grid; grid-template-columns:repeat(3,1fr); padding:14px var(--card-px); border-bottom:1px solid var(--c-line); }
+  .contents_div .gsl2-phase tbody th,
+  .contents_div .gsl2-phase td{ display:block; padding:0; border:0; text-align:left; }
+  .contents_div .gsl2-phase tbody th{ grid-column:1 / -1; }
+  .contents_div .gsl2-phase td.gsl2-route{ grid-column:1 / -1; margin:4px 0 10px; }
+  .contents_div .gsl2-phase td[data-label]::before{ content:attr(data-label); display:block; font-size:var(--fs-label); font-weight:700; line-height:1.4; color:var(--c-sub); }
+
+  .contents_div .gsl2-key{ margin-top:22px; }
+  .contents_div .gsl2-facts > div{ padding:14px 0; }
+  .contents_div .gsl2-facts > div + div{ padding-left:14px; }
+  .contents_div .gsl2-facts dd{ font-size:var(--fs-h3); }
+  .contents_div .gsl2-facts dd small{ margin-top:4px; }
+  .contents_div .gsl2-timeline{ margin-top:20px; }
+  .contents_div .gsl2-timeline li{ padding:22px 6px 0 0; }
+  .contents_div .gsl2-timeline time{ font-size:var(--fs-body); }
+
+  .contents_div .gsl2-feats{ grid-template-columns:1fr; }
+  .contents_div .gsl2-feats > li{ padding:16px 0; }
+  .contents_div .gsl2-feat-desc{ margin-top:4px; padding-left:calc(var(--lb-h) + 8px); }
+  .contents_div .gsl2-spec-wrap{ margin-top:16px; }
+  .contents_div .gsl2-box{ grid-template-columns:1fr; border-bottom:0; }
+  .contents_div .gsl2-box > div,
+  .contents_div .gsl2-box > div:first-child{ flex-direction:row; gap:9px; padding:11px 0; border-left:0; border-bottom:1px solid #b9cbe9; }
+  .contents_div .gsl2-box > div + div{ border-left:0; }
+  .contents_div .gsl2-lb{ margin-top:calc((1.5em - var(--lb-h)) / 2); }
+  .contents_div .gsl2-dots{ grid-template-columns:1fr; gap:6px; margin-top:14px; }
+  .contents_div .gsl2-dots > li{ flex-direction:row; align-items:center; gap:12px; padding:12px 14px; text-align:left; }
+  .contents_div .gsl2-dots > li::before{ width:36px; height:36px; background-size:20px 20px; }
+
+  .contents_div .gsl2-total{ grid-template-columns:1fr; gap:12px; }
+  .contents_div .gsl2-month{ grid-template-columns:1fr; gap:10px; padding:16px var(--card-px); }
+  .contents_div .gsl2-month-tit{ padding-top:0; }
+  .contents_div .gsl2-month-tit span{ display:inline; margin-right:6px; }
+  .contents_div .gsl2-chips{ gap:5px; }
+  .contents_div .gsl2-chips li{ padding:4px 10px; }
+
+  .contents_div .gsl2-prog th,
+  .contents_div .gsl2-prog td{ padding:10px 6px; }
+  .contents_div .gsl2-prog thead th{ white-space:normal; line-height:1.3; }
+  .contents_div .gsl2-field{ flex-direction:column; align-items:stretch; gap:6px; }
+  .contents_div .gsl2-field-name{ flex:0 0 auto; }
+  .contents_div .gsl2-bar{ flex:0 0 auto; height:6px; }
+  .contents_div .gsl2-cta{ min-height:48px; padding:12px 16px; margin-top:20px; }
+
+  .contents_div .gsl2-cost{ grid-template-columns:1fr; gap:20px; }
+  .contents_div .gsl2-split span{ padding:0 8px; }
+  .contents_div .gsl2-save{ grid-template-columns:1fr; gap:6px; margin-top:28px; }
+  .contents_div .gsl2-save > li{ display:flex; align-items:flex-start; gap:10px; padding:14px 14px; }
+  .contents_div .gsl2-save .gsl2-chk-ico{ margin-top:calc((1.5em - var(--lb-h)) / 2); }
+  .contents_div .gsl2-save p{ margin-top:0; }
+  .contents_div .gsl2-effects > li{ padding:16px 0; }
+  .contents_div .gsl2-sub{ padding-left:calc(var(--lb-h) + 8px); }
+  .contents_div .gsl2-eco th,
+  .contents_div .gsl2-eco td{ padding:10px 12px; }
+
+  .contents_div .gsl2-faq{ margin-top:20px; }
+  .contents_div .gsl2-faq-q{ padding:16px 32px 16px 0; }
+  .contents_div .gsl2-faq-q::before,
+  .contents_div .gsl2-faq-q::after{ right:4px; width:12px; }
+  .contents_div .gsl2-faq-a{ padding:0 0 20px 0; }
+  .contents_div .gsl2-call{ grid-template-columns:1fr 1fr; }
+  .contents_div .gsl2-call > div:first-child{ grid-column:1 / -1; }
+  .contents_div .gsl2-call > div{ padding:9px 10px; }
+
+  .contents_div .gsl2-tags{ gap:5px; }
+  .contents_div .gsl2-tags li{ padding:5px 9px; }
+}
+@media (max-width:480px){
+  .contents_div .gsl2-wrap{
+    --fs-nav:clamp(11.5px, calc(11.5px + (100vw - 375px) * 0.0286), 12.5px);
+    --gut:15px;
+  }
+  .contents_div .gsl2-nav-btn{ min-height:44px; }
+}
+@media (max-width:420px){
+  .contents_div .gsl2-wrap{
+    --band:40px;
+    --card-py:19px; --card-px:14px;
+  }
+  .contents_div .gsl2-br--mo-wide{ display:none; }
+  .contents_div .gsl2-br--m420{ display:inline; }
+}
+</style>
+
+<article class="gsl2-wrap">
+
+  <!-- 히어로 -->
+  <div class="gsl2-hero">
+    <div class="gsl2-fig">
+      <img src="img/hero.webp" alt="광주 도시철도 2호선 공사 현장과 전동차" fetchpriority="high" loading="eager" decoding="async">
+    </div>
+  </div>
+
+  <!-- 인트로 -->
+  <header class="gsl2-sec gsl2-intro">
+    <p class="gsl2-intro-date">기준일: <time datetime="2026-10">2026. 10.</time></p>
+    <h1 class="gsl2-h1"><em>광주 도시철도 2호선,</em><br>이렇게 진행되고 있습니다</h1>
+    <div class="gsl2-key">
+      <dl class="gsl2-facts">
+        <div>
+          <dt>총사업비</dt>
+          <dd>3조 2,430억 원</dd>
+        </div>
+        <div>
+          <dt>총연장·정거장</dt>
+          <dd>41.891km·44개소<small>확대순환선</small></dd>
+        </div>
+      </dl>
+      <ol class="gsl2-timeline">
+        <li><time datetime="2028-12">2028년 12월</time><span>1단계 개통 목표</span></li>
+        <li><time datetime="2034-04">2034년 4월</time><span>부분 개통 검토</span></li>
+        <li><time datetime="2035-12">2035년 12월</time><span>2단계 전 구간</span></li>
+      </ol>
+    </div>
+    <nav class="gsl2-nav" aria-label="본문 바로가기">
+      <button type="button" class="gsl2-nav-btn" data-go="gsl2-s1"><span class="gsl2-nav-num">01</span>개통 일정</button>
+      <button type="button" class="gsl2-nav-btn" data-go="gsl2-s2"><span class="gsl2-nav-num">02</span>주요 특징</button>
+      <button type="button" class="gsl2-nav-btn" data-go="gsl2-s3"><span class="gsl2-nav-num">03</span>공정률</button>
+      <button type="button" class="gsl2-nav-btn" data-go="gsl2-s4"><span class="gsl2-nav-num">04</span>운행 효과</button>
+      <button type="button" class="gsl2-nav-btn" data-go="gsl2-s5"><span class="gsl2-nav-num">05</span>시민 질문</button>
+    </nav>
+  </header>
+
+  <!-- 01 개통 일정 -->
+  <section class="gsl2-sec gsl2-sec--1" id="gsl2-s1">
+    <div class="gsl2-kicker-group">
+      <p class="gsl2-kicker"><span class="gsl2-kicker-pin" aria-hidden="true"></span><span class="gsl2-kicker-txt">개통 일정</span></p>
+      <h2 class="gsl2-h2">언제 탈 수 있나요?</h2>
+
+      <figure class="gsl2-map">
+        <div class="gsl2-fig gsl2-fig--map" role="button" tabindex="0" aria-label="광주 도시철도 2호선 노선도 크게 보기">
+          <img class="gsl2-map-bg" src="img/개통일정.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <img class="gsl2-map-img" src="img/개통일정.webp" alt="광주 도시철도 2호선 노선도" loading="lazy" decoding="async">
+          <span class="gsl2-zoom-btn" aria-hidden="true">크게 보기</span>
+        </div>
+      </figure>
+
+      <table class="gsl2-phase">
+        <thead>
+          <tr>
+            <th scope="col">구분</th>
+            <th scope="col">구간</th>
+            <th scope="col">연장</th>
+            <th scope="col">정거장</th>
+            <th scope="col">개통 목표</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1단계</th>
+            <td class="gsl2-route"><ol class="gsl2-stops" aria-label="시청 – 상무역 – 금호지구 – 월드컵경기장 – 백운광장 – 남광주역 – 조선대 – 광주역"><li>시청</li> <li>상무역</li> <li>금호지구</li> <li>월드컵경기장</li> <li>백운광장</li> <li>남광주역</li> <li>조선대</li>&nbsp;<li>광주역</li></ol></td>
+            <td data-label="연장">17.005km</td>
+            <td data-label="정거장">20개소</td>
+            <td data-label="개통 목표"><time datetime="2028-12">2028. 12.</time></td>
+          </tr>
+          <tr>
+            <th scope="row">2단계</th>
+            <td class="gsl2-route"><ol class="gsl2-stops" aria-label="광주역 – 전남대 – 일곡 – 본촌 – 첨단 – 수완 – 운남 – 시청"><li>광주역</li> <li>전남대</li> <li>일곡</li> <li>본촌</li> <li>첨단</li> <li>수완</li> <li>운남</li>&nbsp;<li>시청</li></ol></td>
+            <td data-label="연장">20.046km</td>
+            <td data-label="정거장">18개소</td>
+            <td data-label="개통 목표"><time datetime="2035-12">2035. 12.</time></td>
+          </tr>
+          <tr>
+            <th scope="row">3단계</th>
+            <td class="gsl2-route"><ol class="gsl2-stops" aria-label="백운광장 – 진월 – 효천역"><li>백운광장</li> <li>진월</li>&nbsp;<li>효천역</li></ol></td>
+            <td data-label="연장">4.84km</td>
+            <td data-label="정거장">6개소</td>
+            <td data-label="개통 목표">-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gsl2-open">
+        <h3 class="gsl2-h3">부분 개통으로 먼저 달리겠습니다</h3>
+        <p class="gsl2-lead">시민들이 도시철도를 보다 빨리 이용할 수 있도록 부분 개통을 추진합니다.</p>
+        <dl class="gsl2-open-grid">
+          <div>
+            <dt>구간</dt>
+            <dd>양산동~첨단·수완·신가(11공구~14공구)</dd>
+          </div>
+          <div>
+            <dt>규모</dt>
+            <dd><strong>11.9km</strong>정거장 9개소</dd>
+          </div>
+          <div>
+            <dt>부분 개통 예상 시기</dt>
+            <dd><strong><time datetime="2034-04">2034년 4월</time></strong></dd>
+          </div>
+          <div>
+            <dt>단축 효과</dt>
+            <dd>전 구간 동시 개통 대비 <strong>1년 8개월</strong></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 주요 특징 -->
+  <section class="gsl2-sec gsl2-sec--2" id="gsl2-s2">
+    <div class="gsl2-kicker-group">
+      <p class="gsl2-kicker"><span class="gsl2-kicker-pin" aria-hidden="true"></span><span class="gsl2-kicker-txt">주요 특징</span></p>
+      <h2 class="gsl2-h2">도시철도 2호선<span class="gsl2-br gsl2-br--mo"></span> 어떤 특징이 있나요?</h2>
+
+      <ul class="gsl2-feats gsl2-block--sm">
+        <li>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>확대순환선</strong></p>
+          <p class="gsl2-feat-desc">41.891km로 도심과 신도심을 크게 한 바퀴 잇습니다.</p>
+        </li>
+        <li>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>1호선 환승 가능</strong></p>
+          <p class="gsl2-feat-desc">상무역(1호선), 남광주역(일반철도)에서 환승 교통 편의 향상</p>
+        </li>
+        <li>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>저심도 승강장</strong></p>
+          <p class="gsl2-feat-desc">지하 1층 저심도 승강장으로 이용객의 접근 동선이 짧습니다.</p>
+        </li>
+        <li>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>배차</strong></p>
+          <p class="gsl2-feat-desc">출퇴근 4분 30초~5분, 평시 8~10분으로 기다림을 줄입니다.</p>
+        </li>
+        <li>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>완전 무인 운전</strong></p>
+          <p class="gsl2-feat-desc">기관사 없는 UTO(GoA 4) 방식으로, 국내에서 40km 이상 구간에 적용하는 첫 사례입니다.</p>
+        </li>
+        <li>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>국산 기술</strong></p>
+          <p class="gsl2-feat-desc">한국형 고무차륜 경전철(K-AGT)과 무선통신 기반 열차제어(RF-CBTC)를 씁니다.</p>
+        </li>
+      </ul>
+
+      <div class="gsl2-block">
+        <h3 class="gsl2-h3">최첨단 기술이 집약된<span class="gsl2-br gsl2-br--mo"></span> 완전자동무인운전시스템</h3>
+        <div class="gsl2-spec-wrap">
+          <dl class="gsl2-box">
+            <div>
+              <dt class="gsl2-lb">차량 길이</dt>
+              <dd>2.4m(폭)×3.5m(높이)×20.92m(길이) / 1편성</dd>
+            </div>
+            <div>
+              <dt class="gsl2-lb">최대 속도</dt>
+              <dd><strong>70km/h</strong></dd>
+            </div>
+            <div>
+              <dt class="gsl2-lb">탑승 인원</dt>
+              <dd><strong>153명</strong> / 1편성(객차 2대)</dd>
+            </div>
+          </dl>
+          <ul class="gsl2-dots">
+            <li>종합관제실에서<br>실시간 감시·제어</li>
+            <li>편의성·안정성<br>스마트 전동차</li>
+            <li>방풍문·미세먼지<br>자동측정기</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 공정률 -->
+  <section class="gsl2-sec gsl2-sec--3" id="gsl2-s3">
+    <div class="gsl2-kicker-group">
+      <p class="gsl2-kicker"><span class="gsl2-kicker-pin" aria-hidden="true"></span><span class="gsl2-kicker-txt">공정률</span></p>
+      <h2 class="gsl2-h2">공사는 얼마나 진행되었나요?</h2>
+
+      <div class="gsl2-block--sm">
+        <div class="gsl2-prog-head">
+          <h3 class="gsl2-h3">도시철도 2호선 1단계 공정률</h3>
+          <p class="gsl2-prog-date"><time datetime="2026-09-30">2026. 9. 30.</time> 기준</p>
+        </div>
+
+        <div class="gsl2-dash">
+          <div class="gsl2-total">
+            <div>
+              <p class="gsl2-total-lb">통합공정률</p>
+              <p class="gsl2-total-val">90.32%</p>
+            </div>
+            <div>
+              <p class="gsl2-total-bar" role="img" aria-label="전월누계 88.99%, 금월실적 1.33%, 잔여 9.68%"></p>
+              <dl class="gsl2-legend">
+                <div><dt>전월누계</dt><dd>88.99%</dd></div>
+                <div><dt>금월실적</dt><dd>1.33%</dd></div>
+                <div><dt>잔여</dt><dd>9.68%</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="gsl2-month">
+            <p class="gsl2-month-tit"><span>9월</span>주요 공정 실적</p>
+            <ul class="gsl2-chips">
+              <li>정거장 벽체 마감공사</li>
+              <li>정거장 내 배관·배선공사</li>
+              <li>본선 궤도공사 안내레일 설치</li>
+            </ul>
+          </div>
+          <div class="gsl2-month gsl2-month--plan">
+            <p class="gsl2-month-tit"><span>10월</span>주요 공정 계획</p>
+            <ul class="gsl2-chips">
+              <li>정거장 벽체 마감공사</li>
+              <li>정거장 내 배관·배선공사</li>
+              <li>전동차 반입(2~7편성, 12량)</li>
+              <li>본선 주행로 연마</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="gsl2-block">
+        <h3 class="gsl2-h3">분야별 세부 공정률</h3>
+        <table class="gsl2-prog">
+          <thead>
+            <tr>
+              <th scope="col">구분</th>
+              <th scope="col">전월누계(A)</th>
+              <th scope="col">금월실적(B)</th>
+              <th scope="col">금월누계(A+B)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">토목</span><span class="gsl2-bar" style="--a:98.99%;--b:0.10%" aria-hidden="true"></span></span></th><td>98.99%</td><td>0.10%</td><td>99.09%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">궤도</span><span class="gsl2-bar" style="--a:75.90%;--b:8.50%" aria-hidden="true"></span></span></th><td>75.90%</td><td>8.50%</td><td>84.40%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">건축</span><span class="gsl2-bar" style="--a:41.28%;--b:5.09%" aria-hidden="true"></span></span></th><td>41.28%</td><td>5.09%</td><td>46.37%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">송변전</span><span class="gsl2-bar" style="--a:44.02%;--b:12.78%" aria-hidden="true"></span></span></th><td>44.02%</td><td>12.78%</td><td>56.80%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">일반전기</span><span class="gsl2-bar" style="--a:48.23%;--b:7.13%" aria-hidden="true"></span></span></th><td>48.23%</td><td>7.13%</td><td>55.36%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">전차선</span><span class="gsl2-bar" style="--a:22.12%;--b:6.38%" aria-hidden="true"></span></span></th><td>22.12%</td><td>6.38%</td><td>28.50%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">기계</span><span class="gsl2-bar" style="--a:36.45%;--b:13.27%" aria-hidden="true"></span></span></th><td>36.45%</td><td>13.27%</td><td>49.72%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">소방</span><span class="gsl2-bar" style="--a:68.26%;--b:1.04%" aria-hidden="true"></span></span></th><td>68.26%</td><td>1.04%</td><td>69.30%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">신호</span><span class="gsl2-bar" style="--a:57.61%;--b:1.63%" aria-hidden="true"></span></span></th><td>57.61%</td><td>1.63%</td><td>59.24%</td></tr>
+            <tr><th scope="row"><span class="gsl2-field"><span class="gsl2-field-name">통신</span><span class="gsl2-bar" style="--a:38.43%;--b:0.69%" aria-hidden="true"></span></span></th><td>38.43%</td><td>0.69%</td><td>39.12%</td></tr>
+          </tbody>
+        </table>
+
+        <a class="gsl2-cta" href="https://www.gwangju.go.kr/build/contentsView.do?pageId=build183" target="_blank" rel="noopener">
+          <span>공사 진행 상황 확인하기</span><span class="gsl2-cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 운행 효과 -->
+  <section class="gsl2-sec gsl2-sec--4" id="gsl2-s4">
+    <div class="gsl2-kicker-group">
+      <p class="gsl2-kicker"><span class="gsl2-kicker-pin" aria-hidden="true"></span><span class="gsl2-kicker-txt">운행 효과</span></p>
+      <h2 class="gsl2-h2">광주 도시철도 2호선<span class="gsl2-br gsl2-br--mo"></span> 운행 효과는?</h2>
+
+      <div class="gsl2-cost gsl2-block--sm">
+        <div>
+          <h3 class="gsl2-h3">총사업비</h3>
+          <p class="gsl2-cost-val">3조 2,430억 원<small>(국비 60%, 시비 40%)</small></p>
+          <p class="gsl2-split" aria-hidden="true"><span>국비 60%</span><span>시비 40%</span></p>
+        </div>
+        <ul class="gsl2-num-list">
+          <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>사업비의 60%를 국가가 지원</li>
+          <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>시비를 연도별로 분산 투자하고 지방채를 발행해 시의 재정 부담 최소화</li>
+        </ul>
+      </div>
+
+      <ul class="gsl2-save">
+        <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>교통혼잡비용 <strong>연간 1,800억 원</strong> 절감</p></li>
+        <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>중복 노선 감축 등 시내버스 재정지원금 <strong>연간 약 81억 원</strong> 감소 추정</p></li>
+        <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>신규 도로 개설 축소에 따른 비용 절감(도로율 10% 향상 시 <strong>2.6조 원</strong> 예상)</p></li>
+      </ul>
+
+      <div class="gsl2-block">
+        <h3 class="gsl2-h3">도시철도 2호선 건설 효과</h3>
+        <ul class="gsl2-effects">
+          <li>
+            <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>주요 생활권을 30분 내 신속하게 연결</strong></p>
+            <ul class="gsl2-sub">
+              <li>도시철도+급행버스 중심의 간선망+지선망 연결</li>
+              <li>도시철도 교통 수송 분담률 <strong>8.7%</strong> 증가 연간 <strong>20만 톤</strong> 도로교통 미세먼지 감소</li>
+              <li>시민 교통 수혜율 확대 17%(25만 명) → <strong>71%(103만 명)</strong></li>
+              <li>타 교통수단에 비해 저렴하고 정시성, 신속성 확보</li>
+              <li>역세권 주변 상권 형성으로 도심 발전</li>
+            </ul>
+          </li>
+          <li>
+            <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>지역 건설업 활성화 및 신규 일자리 창출 기대</strong></p>
+            <p class="gsl2-note">(출처: KDI 보고서)</p>
+            <table class="gsl2-eco">
+              <thead>
+                <tr><th scope="col">구분</th><th scope="col">기대 효과</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">생산 유발 효과</th><td>1조 8,011억 원</td></tr>
+                <tr><th scope="row">부가가치 유발 효과</th><td>8,099억 원</td></tr>
+                <tr><th scope="row">고용 유발 효과</th><td>18,191명</td></tr>
+                <tr><th scope="row">취업 유발 효과</th><td>19,227명</td></tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 시민 질문 -->
+  <section class="gsl2-sec gsl2-sec--5" id="gsl2-s5">
+    <div class="gsl2-kicker-group">
+      <p class="gsl2-kicker"><span class="gsl2-kicker-pin" aria-hidden="true"></span><span class="gsl2-kicker-txt">시민 질문</span></p>
+      <h2 class="gsl2-h2">시민이 자주 묻는 질문</h2>
+
+      <div class="gsl2-faq">
+        <details class="gsl2-faq-item">
+          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">공사로 막혔던 도로는<span class="gsl2-br gsl2-br--m420"></span> 어떻게 되나요?</h3></span></summary>
+          <div class="gsl2-faq-a">
+            <p>시민 불편 사항이었던 도로 개방의 경우 1단계 구간은 전 구간 개방이 완료된 상황입니다. 2단계 우선 개통 구간은 2030년 상반기까지 개방을 마무리할 예정이니 시민 여러분의 너른 양해를 부탁드립니다.</p>
+          </div>
+        </details>
+
+        <details class="gsl2-faq-item">
+          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">도시철도 2호선 연장<span class="gsl2-br gsl2-br--m420"></span> 사업 배경이 궁금해요</h3></span></summary>
+          <div class="gsl2-faq-a">
+            <p>공사 중 예상하지 못한 암반과 매설물이 발견됐고, 건축·전기·신호·차량 같은 후속 공정을 함께 맞추는 과정에서 일정을 다시 점검하게 됐어요. 시는 앞으로 남은 공정을 개통까지 통합 관리하고, 일정에 영향을 주는 핵심 공정을 집중적으로 관리하겠다고 밝혔어요.</p>
+          </div>
+        </details>
+
+        <details class="gsl2-faq-item">
+          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">2호선 열차가 1호선보다 작다던데</h3></span></summary>
+          <div class="gsl2-faq-a">
+            <p>구조가 다릅니다. 2호선은 국내 기술로 만든 고무차륜 경전철(K-AGT)이에요. 1편성(2량)은 길이 약 20.9m, 폭 2.4m이고, 정원은 114명(혼잡도 150%일 때 최대 153명)이에요. 대신 열차가 더 자주 오는 방식으로 운영할 계획입니다.</p>
+          </div>
+        </details>
+
+        <details class="gsl2-faq-item">
+          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">개통이 또 미뤄지는 게 아닐까요?</h3></span></summary>
+          <div class="gsl2-faq-a">
+            <p>시민의 걱정을 알기에 더 단단하고 꼼꼼하게 대비합니다.</p>
+            <ul class="gsl2-num-list">
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>전 구간 개통에 필요한 사업비 단계적으로 재검토</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>실제 공정에 맞춰 연차별 투자 계획을 합리적으로 재조정</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>개통 시점까지의 전체 과정을 통합 관리</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>핵심 공정을 집중 관리해 공정 지연 최소화</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>매월 공정 진행 현황 발표</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>사업 추진 현황 시민에게 투명하게 공개</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="gsl2-faq-item">
+          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">도시철도 2호선으로 인한<span class="gsl2-br gsl2-br--mo"></span> 불편 신고는 어디로 하나요?</h3></span></summary>
+          <div class="gsl2-faq-a">
+            <address>
+              <p class="gsl2-call-head">[시민 불편 신고]</p>
+              <p class="gsl2-call-tit">전화 접수: 공구별 연락처</p>
+              <dl class="gsl2-call">
+                <div><dt>차량기지</dt><dd><a href="tel:062-613-6453">062)613-6453</a></dd></div>
+                <div><dt>1공구</dt><dd><a href="tel:062-613-6627">062)613-6627</a></dd></div>
+                <div><dt>2공구</dt><dd><a href="tel:062-613-6612">062)613-6612</a></dd></div>
+                <div><dt>3공구</dt><dd><a href="tel:062-613-6405">062)613-6405</a></dd></div>
+                <div><dt>4공구</dt><dd><a href="tel:062-613-6632">062)613-6632</a></dd></div>
+                <div><dt>5공구</dt><dd><a href="tel:062-613-6637">062)613-6637</a></dd></div>
+                <div><dt>6공구</dt><dd><a href="tel:062-613-6408">062)613-6408</a></dd></div>
+              </dl>
+              <p class="gsl2-call-tit gsl2-web">인터넷 접수: 민원 신청</p>
+              <p>국민신문고 및 안전신문고 앱에서 접수 가능</p>
+            </address>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="gsl2-sec gsl2-foot">
+    <ul class="gsl2-tags">
+      <li>#광주도시철도2호선</li>
+      <li>#광주지하철2호선</li>
+      <li>#도시철도2호선공정률</li>
+      <li>#2호선개통</li>
+      <li>#2호선부분개통</li>
+      <li>#확대순환선</li>
+      <li>#완전무인운전</li>
+      <li>#K-AGT</li>
+      <li>#광주광역시</li>
+      <li>#전남광주통합특별시</li>
+    </ul>
+  </footer>
+
+</article>
+
+<div class="gsl2-lightbox" role="dialog" aria-modal="true" aria-label="광주 도시철도 2호선 노선도 크게 보기" tabindex="-1">
+  <p class="gsl2-lightbox-hint">이미지를 누르면 확대·축소됩니다</p>
+  <div class="gsl2-lightbox-stage">
+    <img class="gsl2-lightbox-img" src="img/개통일정.webp" alt="광주 도시철도 2호선 노선도" loading="lazy" decoding="async">
+    <button type="button" class="gsl2-lightbox-close" aria-label="닫기"></button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.querySelector('.contents_div');
+  if(!root) return;
+  var btns = root.querySelectorAll('.gsl2-nav-btn');
+
+
+  /* 노선도 크게 보기 */
+  (function(){
+    var fig = root.querySelector('.gsl2-fig--map');
+    var lb = root.querySelector('.gsl2-lightbox');
+    if(!fig || !lb) return;
+    var img = lb.querySelector('.gsl2-lightbox-img');
+    var close = lb.querySelector('.gsl2-lightbox-close');
+    function open(){ lb.classList.remove('is-zoom'); lb.classList.add('is-open'); lb.scrollTop = 0; lb.focus(); }
+    function shut(){ lb.classList.remove('is-open'); fig.focus(); }
+    fig.addEventListener('click', open);
+    fig.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+    close.addEventListener('click', shut);
+    var stage = lb.querySelector('.gsl2-lightbox-stage');
+    lb.addEventListener('click', function(e){ if(e.target === lb || e.target === stage) shut(); });
+    lb.addEventListener('keydown', function(e){ if(e.key === 'Escape') shut(); });
+    img.addEventListener('click', function(){ lb.classList.toggle('is-zoom'); });
+  })();
+
+  if(!btns.length) return;
+
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = root.querySelector('#' + btn.getAttribute('data-go'));
+      if(!el) return;
+      var y = el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  if(!('IntersectionObserver' in window)) return;
+  var map = {};
+  btns.forEach(function(b){ map[b.getAttribute('data-go')] = b; });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      btns.forEach(function(b){ b.removeAttribute('aria-current'); });
+      var b = map[en.target.id];
+      if(b) b.setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  Object.keys(map).forEach(function(id){
+    var s = root.querySelector('#' + id);
+    if(s) io.observe(s);
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "공사로 막혔던 도로는 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "시민 불편 사항이었던 도로 개방의 경우 1단계 구간은 전 구간 개방이 완료된 상황입니다. 2단계 우선 개통 구간은 2030년 상반기까지 개방을 마무리할 예정이니 시민 여러분의 너른 양해를 부탁드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "도시철도 2호선 연장 사업 배경이 궁금해요",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "공사 중 예상하지 못한 암반과 매설물이 발견됐고, 건축·전기·신호·차량 같은 후속 공정을 함께 맞추는 과정에서 일정을 다시 점검하게 됐어요. 시는 앞으로 남은 공정을 개통까지 통합 관리하고, 일정에 영향을 주는 핵심 공정을 집중적으로 관리하겠다고 밝혔어요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2호선 열차가 1호선보다 작다던데",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구조가 다릅니다. 2호선은 국내 기술로 만든 고무차륜 경전철(K-AGT)이에요. 1편성(2량)은 길이 약 20.9m, 폭 2.4m이고, 정원은 114명(혼잡도 150%일 때 최대 153명)이에요. 대신 열차가 더 자주 오는 방식으로 운영할 계획입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "개통이 또 미뤄지는 게 아닐까요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "시민의 걱정을 알기에 더 단단하고 꼼꼼하게 대비합니다. 전 구간 개통에 필요한 사업비 단계적으로 재검토 실제 공정에 맞춰 연차별 투자 계획을 합리적으로 재조정 개통 시점까지의 전체 과정을 통합 관리 핵심 공정을 집중 관리해 공정 지연 최소화 매월 공정 진행 현황 발표 사업 추진 현황 시민에게 투명하게 공개"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "도시철도 2호선으로 인한 불편 신고는 어디로 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[시민 불편 신고] 전화 접수: 공구별 연락처 차량기지 062)613-6453 1공구 062)613-6627 2공구 062)613-6612 3공구 062)613-6405 4공구 062)613-6632 5공구 062)613-6637 6공구 062)613-6408 인터넷 접수: 민원 신청 국민신문고 및 안전신문고 앱에서 접수 가능"
+      }
+    }
+  ]
+}
+</script>
+</div>
