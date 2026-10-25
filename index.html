@@ -579,6 +579,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   .contents_div .gsl2-h1,
   .contents_div .gsl2-h2{ line-height:1.4; }
+  .contents_div .gsl2-h2{ font-size:calc(var(--fs-h2) + 2px); }   /* 섹션 제목 +2px */
   .contents_div .gsl2-h3{ line-height:1.5; }
   .contents_div .gsl2-kicker-txt{ padding:0 12px 0 calc(var(--pin) / 2 + 7px); line-height:1; }
   .contents_div .gsl2-block{ margin-top:32px; }
@@ -642,7 +643,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-feats{ grid-template-columns:1fr; gap:0; }
   .contents_div .gsl2-feats > li{ padding:16px 0; }
   .contents_div .gsl2-feats .gsl2-chk{ gap:8px; }
-  .contents_div .gsl2-feats .gsl2-chk-ico{ flex-basis:18px; width:18px; }
+  .contents_div .gsl2-feats .gsl2-chk-ico{ flex-basis:18px; width:18px; font-size:calc(var(--fs-body) + 2px); }
+  .contents_div .gsl2-feats strong{ font-size:calc(var(--fs-body) + 2px); }   /* 주요 특징 제목·번호 +2px */
   .contents_div .gsl2-feat-desc{ margin-top:6px; padding-left:26px; }
   .contents_div .gsl2-spec-wrap{ margin-top:16px; }
   .contents_div .gsl2-box{ grid-template-columns:1fr; border-bottom:0; }
