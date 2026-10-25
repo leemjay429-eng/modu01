@@ -226,7 +226,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gsl2-phase thead th{ background:var(--c-bg1); font-weight:700; color:var(--c-deep); white-space:nowrap; }
 .contents_div .gsl2-phase tbody th{ font-weight:800; color:var(--c-blue); white-space:nowrap; }
 .contents_div .gsl2-phase td.gsl2-route{ text-align:left; }
-.contents_div .gsl2-phase td{ white-space:nowrap; }
+.contents_div .gsl2-phase td{ white-space:nowrap; font-size:calc(var(--fs-info) - 0.5px); }
+.contents_div .gsl2-phase th + th,
+.contents_div .gsl2-phase th + td,
+.contents_div .gsl2-phase td + td{ border-left:1px solid var(--c-line); }
 .contents_div .gsl2-phase td.gsl2-route{ white-space:normal; }
 .contents_div .gsl2-stops{ display:block; text-wrap:pretty; }
 .contents_div .gsl2-stops li{ display:inline; white-space:nowrap; }
@@ -258,11 +261,22 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* 특징 목록 */
 .contents_div .gsl2-feats{
-  display:grid; grid-template-columns:1fr 1fr; gap:0 32px; margin-top:12px;
+  display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px;
 }
-.contents_div .gsl2-feats > li{ padding:20px 0; border-bottom:1px solid #b9cbe9; }
-.contents_div .gsl2-feats strong{ font-size:var(--fs-body); font-weight:700; line-height:1.4; color:var(--c-navy); }
-.contents_div .gsl2-feat-desc{ margin-top:6px; font-size:var(--fs-lead); color:var(--c-sub); }
+.contents_div .gsl2-feats > li{
+  position:relative; padding:var(--card-py) var(--card-px); background:var(--c-navy); border-radius:3px; overflow:hidden;
+}
+.contents_div .gsl2-feats > li::after{
+  content:''; position:absolute; right:-28px; bottom:-28px; width:96px; height:96px; border-radius:50%;
+  border:14px solid rgba(143,179,245,.12);
+}
+.contents_div .gsl2-feats .gsl2-chk{ flex-direction:column; align-items:flex-start; gap:12px; }
+.contents_div .gsl2-feats .gsl2-chk-ico{
+  width:auto; height:auto; padding:0 0 8px; border-radius:0; background:none; border-bottom:2px solid var(--c-blue-l);
+  font-size:var(--fs-h3); font-weight:800; letter-spacing:0; color:var(--c-blue-l);
+}
+.contents_div .gsl2-feats strong{ font-size:var(--fs-h3); font-weight:800; line-height:1.4; color:#fff; }
+.contents_div .gsl2-feat-desc{ position:relative; z-index:1; margin-top:8px; font-size:var(--fs-lead); color:#c3d5f8; }
 
 /* 차량 사양 */
 .contents_div .gsl2-spec-wrap{ margin-top:20px; }
@@ -398,7 +412,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gsl2-faq-q .gsl2-chk{ align-items:flex-start; }
 .contents_div .gsl2-faq-mark{
   flex:0 0 auto; display:flex; align-items:center; justify-content:center;
-  width:var(--kick); height:var(--kick); border-radius:3px; background:var(--c-navy); color:#fff;
+  width:var(--kick); height:var(--kick); border-radius:50%; background:var(--c-navy); color:#fff;
   font-family:'Pretendard',sans-serif; font-size:var(--fs-num); font-weight:800; line-height:1;
 }
 .contents_div .gsl2-faq-q .gsl2-h3{ padding-top:calc((var(--kick) - 1.45em) / 2); }
@@ -444,7 +458,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     --fs-h3:clamp(16px, calc(16px + (100vw - 375px) * 0.0286), 17px);
     --fs-body:clamp(13.5px, calc(13.5px + (100vw - 375px) * 0.0143), 14px);
     --fs-lead:var(--fs-body); --fs-info:var(--fs-body); --fs-cta:var(--fs-body);
-    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:10px; --fs-num:10px; --fs-tagcap:10px;
+    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:11.5px; --fs-num:10px; --fs-tagcap:10px;
     --fs-label:10px; --fw-label:400; --fs-check:10px; --fs-caption:10px;
     --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
     --gut:22px;
@@ -459,7 +473,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-h1,
   .contents_div .gsl2-h2{ line-height:1.4; }
   .contents_div .gsl2-h3{ line-height:1.5; }
+  .contents_div .gsl2-kicker{ justify-content:center; }
   .contents_div .gsl2-kicker-txt{ padding:0 11px 0 calc(var(--pin) / 2 + 8px); line-height:1; }
+  .contents_div .gsl2-h2{ text-align:center; }
   .contents_div .gsl2-block{ margin-top:32px; }
   .contents_div .gsl2-block--sm{ margin-top:24px; }
 
@@ -481,6 +497,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-open-grid > div,
   .contents_div .gsl2-open-grid > div + div{ padding:12px 10px 12px 0; border-left:0; }
   .contents_div .gsl2-open-grid > div:nth-child(even){ padding-left:10px; border-left:1px solid var(--c-line); }
+  .contents_div .gsl2-open-grid > div:nth-child(1),
+  .contents_div .gsl2-open-grid > div:nth-child(4){ grid-column:1 / -1; padding-left:0; border-left:0; }
+  .contents_div .gsl2-open-grid > div:nth-child(4) dd strong{ display:inline; margin-left:4px; }
+  .contents_div .gsl2-open-grid > div:nth-child(2){ padding-left:0; border-left:0; }
+  .contents_div .gsl2-open-grid > div:nth-child(3){ padding-left:10px; border-left:1px solid var(--c-line); }
   .contents_div .gsl2-open-grid dd{ margin-top:4px; }
 
   /* 단계 표 → 블록 */
@@ -494,6 +515,14 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-phase td.gsl2-route{ grid-column:1 / -1; margin:4px 0 10px; }
   .contents_div .gsl2-stops{ text-wrap:wrap; }
   .contents_div .gsl2-phase td[data-label]::before{ content:attr(data-label); display:block; font-size:var(--fs-label); font-weight:700; line-height:1.4; color:var(--c-sub); }
+  .contents_div .gsl2-phase td.gsl2-route{ margin:6px 0 12px; }
+  .contents_div .gsl2-phase td{ font-size:var(--fs-info); }
+  .contents_div .gsl2-phase th + td,
+  .contents_div .gsl2-phase td + td{ border-left:0; }
+  .contents_div .gsl2-phase td[data-label]{ padding:9px 10px; background:var(--c-bg1); font-weight:600; color:var(--c-navy); }
+  .contents_div .gsl2-phase td[data-label] + td[data-label]{ border-left:1px solid #fff; }
+  .contents_div .gsl2-phase td[data-label]:nth-child(3){ border-radius:3px 0 0 3px; }
+  .contents_div .gsl2-phase td[data-label]:last-child{ border-radius:0 3px 3px 0; }
 
   .contents_div .gsl2-key{ margin-top:22px; }
   .contents_div .gsl2-facts > div{ padding:14px 0; }
@@ -504,18 +533,19 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-timeline li{ padding:22px 6px 0 0; }
   .contents_div .gsl2-timeline time{ font-size:var(--fs-body); }
 
-  .contents_div .gsl2-feats{ grid-template-columns:1fr; }
-  .contents_div .gsl2-feats > li{ padding:16px 0; }
-  .contents_div .gsl2-feat-desc{ margin-top:4px; padding-left:calc(var(--lb-h) + 8px); }
+  .contents_div .gsl2-feats{ grid-template-columns:1fr; gap:6px; }
+  .contents_div .gsl2-feats .gsl2-chk{ flex-direction:row; align-items:center; gap:10px; }
+  .contents_div .gsl2-feats .gsl2-chk-ico{ padding:0 10px 0 0; border-bottom:0; border-right:2px solid var(--c-blue-l); line-height:1.1; }
+  .contents_div .gsl2-feat-desc{ margin-top:6px; }
   .contents_div .gsl2-spec-wrap{ margin-top:16px; }
   .contents_div .gsl2-box{ grid-template-columns:1fr; border-bottom:0; }
   .contents_div .gsl2-box > div,
   .contents_div .gsl2-box > div:first-child{ flex-direction:row; gap:9px; padding:11px 0; border-left:0; border-bottom:1px solid #b9cbe9; }
   .contents_div .gsl2-box > div + div{ border-left:0; }
   .contents_div .gsl2-lb{ margin-top:calc((1.5em - var(--lb-h)) / 2); }
-  .contents_div .gsl2-dots{ grid-template-columns:1fr; gap:6px; margin-top:14px; }
-  .contents_div .gsl2-dots > li{ flex-direction:row; align-items:center; gap:12px; padding:12px 14px; text-align:left; }
-  .contents_div .gsl2-dots > li::before{ width:36px; height:36px; background-size:20px 20px; }
+  .contents_div .gsl2-dots{ gap:5px; margin-top:14px; }
+  .contents_div .gsl2-dots > li{ gap:8px; padding:14px 4px; font-size:12px; line-height:1.45; letter-spacing:-0.04em; }
+  .contents_div .gsl2-dots > li::before{ width:34px; height:34px; background-size:19px 19px; }
 
   .contents_div .gsl2-total{ grid-template-columns:1fr; gap:12px; }
   .contents_div .gsl2-month{ grid-template-columns:1fr; gap:10px; padding:16px var(--card-px); }
@@ -693,27 +723,27 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
       <ul class="gsl2-feats gsl2-block--sm">
         <li>
-          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>확대순환선</strong></p>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">01</span><strong>확대순환선</strong></p>
           <p class="gsl2-feat-desc">41.891km로 도심과 신도심을 크게 한 바퀴 잇습니다.</p>
         </li>
         <li>
-          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>1호선 환승 가능</strong></p>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">02</span><strong>1호선 환승 가능</strong></p>
           <p class="gsl2-feat-desc">상무역(1호선), 남광주역(일반철도)에서 환승 교통 편의 향상</p>
         </li>
         <li>
-          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>저심도 승강장</strong></p>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">03</span><strong>저심도 승강장</strong></p>
           <p class="gsl2-feat-desc">지하 1층 저심도 승강장으로 이용객의 접근 동선이 짧습니다.</p>
         </li>
         <li>
-          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>배차</strong></p>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">04</span><strong>배차</strong></p>
           <p class="gsl2-feat-desc">출퇴근 4분 30초~5분, 평시 8~10분으로 기다림을 줄입니다.</p>
         </li>
         <li>
-          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>완전 무인 운전</strong></p>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">05</span><strong>완전 무인 운전</strong></p>
           <p class="gsl2-feat-desc">기관사 없는 UTO(GoA 4) 방식으로, 국내에서 40km 이상 구간에 적용하는 첫 사례입니다.</p>
         </li>
         <li>
-          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>국산 기술</strong></p>
+          <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">06</span><strong>국산 기술</strong></p>
           <p class="gsl2-feat-desc">한국형 고무차륜 경전철(K-AGT)과 무선통신 기반 열차제어(RF-CBTC)를 씁니다.</p>
         </li>
       </ul>
