@@ -85,11 +85,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gsl2-sec{ width:100%; padding:var(--band) var(--gut); }
 .contents_div .gsl2-sec--1{ background:var(--c-bg1); }
 .contents_div .gsl2-sec--2{ background:var(--c-bg2); }
-.contents_div .gsl2-sec--3{ background:var(--c-bg1); }
-.contents_div .gsl2-sec--4{ background:var(--c-bg3); }
+.contents_div .gsl2-sec--3{ background:var(--c-bg1); border-top:1px solid #c2d2ed; }   /* 위 섹션·배경 이미지와 구분되는 경계선 */
+.contents_div .gsl2-sec--4{ background:var(--c-bg3); border-top:1px solid #e2dccf; }
 .contents_div .gsl2-sec--5{ background:var(--c-bg2); }
-.contents_div .gsl2-sec--3{ border-top:1px solid #c2d2ed; }   /* 위 섹션(#dce7f8)·배경 이미지와 구분되게 조금 더 진하게 */
-.contents_div .gsl2-sec--4{ border-top:1px solid #e2dccf; }
 
 /* 이미지 */
 .contents_div .gsl2-fig{ position:relative; width:100%; overflow:hidden; background:#eee; }
@@ -217,8 +215,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   24%{ transform:translateY(calc(var(--pin) * -0.16)); }
 }
 .contents_div .gsl2-sec.is-in .gsl2-kicker-pin{ animation:gsl2-pin-bounce 2.6s cubic-bezier(.3,0,.4,1) .2s infinite; }
-.contents_div .gsl2-kicker-txt{ position:relative; z-index:1; margin-top:calc((var(--pin) - var(--kick)) / 2 + 5px); margin-left:calc(var(--pin) / -2 - 10px); }
 .contents_div .gsl2-kicker-txt{
+  position:relative; z-index:1; margin-top:calc((var(--pin) - var(--kick)) / 2 + 5px); margin-left:calc(var(--pin) / -2 - 10px);
   display:inline-flex; align-items:center; height:var(--kick); padding:0 16px 0 calc(var(--pin) / 2 + 9px);   /* 텍스트만 왼쪽 1px — 박스 폭은 그대로 */
   background:var(--c-blue); border:1px solid var(--c-blue); border-radius:3px; color:#fff;
   font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:0.01em;
@@ -301,15 +299,14 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 /* 단계 표 */
 .contents_div .gsl2-phase{ margin-top:24px; background:#fff; border-top:2px solid var(--c-navy); }
 .contents_div .gsl2-phase th,
-.contents_div .gsl2-phase td{ padding:14px 10px; border-bottom:1px solid var(--c-line); font-size:var(--fs-info); line-height:1.5; text-align:center; vertical-align:middle; }
-.contents_div .gsl2-phase thead th{ background:var(--c-bg1); font-weight:700; color:var(--c-deep); white-space:nowrap; }
+.contents_div .gsl2-phase td{ padding:14px 10px; border-bottom:1px solid var(--c-line); line-height:1.5; text-align:center; vertical-align:middle; }
+.contents_div .gsl2-phase thead th{ background:var(--c-bg1); font-size:var(--fs-info); font-weight:700; color:var(--c-deep); white-space:nowrap; }
 .contents_div .gsl2-phase tbody th{ font-size:calc(var(--fs-info) - 1.5px); font-weight:800; color:var(--c-blue); white-space:nowrap; }
-.contents_div .gsl2-phase td.gsl2-route{ text-align:left; }
+.contents_div .gsl2-phase td.gsl2-route{ text-align:left; white-space:normal; }
 .contents_div .gsl2-phase td{ white-space:nowrap; font-size:calc(var(--fs-info) - 0.5px); }
 .contents_div .gsl2-phase th + th,
 .contents_div .gsl2-phase th + td,
 .contents_div .gsl2-phase td + td{ border-left:1px solid var(--c-line); }
-.contents_div .gsl2-phase td.gsl2-route{ white-space:normal; }
 .contents_div .gsl2-stops{ display:block; text-wrap:pretty; }
 .contents_div .gsl2-stops li{ display:inline; white-space:nowrap; }
 .contents_div .gsl2-stops li:first-child,
@@ -400,8 +397,14 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   -webkit-mask-image:linear-gradient(to bottom, #000 45%, transparent 100%); mask-image:linear-gradient(to bottom, #000 45%, transparent 100%);   /* 하단으로 갈수록 투명 */
 }
 .contents_div .gsl2-sec-bg img{ width:100%; height:100%; object-fit:cover; object-position:center top; }   /* 이미지 위쪽 기준 */
-.contents_div .gsl2-sec--4 .gsl2-sec-bg img{ position:absolute; top:0; left:50%; width:auto; min-width:100%; max-width:none; height:100%; transform:translateX(-50%); object-position:center top; }   /* 운행 효과: 이미지 높이를 영역 높이에 맞추고 가로 중앙·위쪽 기준 */
-.contents_div .gsl2-sec--4 .gsl2-sec-bg img{ position:absolute; top:0; left:50%; width:auto; max-width:none; height:100%; transform:translateX(-50%); }   /* 운행 효과: 높이에 맞추고 가로 가운데 */
+.contents_div .gsl2-sec--3 .gsl2-sec-bg{ container-type:size; background:none; }
+.contents_div .gsl2-sec--3 .gsl2-sec-bg img{   /* 공정률: 히어로배경(1600×1287) 재사용 — 원본 기준 윗부분 270px 잘라내고 불투명도 20% */
+  --h:max(100cqw * 0.80438, 100cqh * 1.26549);   /* 이미지 높이: 폭을 다 채우고(1287/1600), 잘라낸 뒤에도 영역 아래까지 덮게(1287/1017) */
+  position:absolute; left:50%; top:calc(var(--h) * -0.20979);   /* 270/1287 만큼 위로 */
+  width:calc(var(--h) * 1.24320); height:var(--h); max-width:none;   /* 1600/1287 */
+  transform:translateX(-50%); object-fit:fill; opacity:.2;
+}
+.contents_div .gsl2-sec--4 .gsl2-sec-bg img{ position:absolute; top:0; left:50%; width:auto; min-width:100%; max-width:none; height:100%; transform:translateX(-50%); object-fit:cover; object-position:center top; }   /* 운행 효과: 높이에 맞추고 가로 가운데 — 폭보다 좁으면 폭을 꽉 채움(위쪽 기준) */
 .contents_div .gsl2-prog-head{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
 .contents_div .gsl2-prog-date{ font-size:var(--fs-label); font-weight:600; color:var(--c-sub); }
 .contents_div .gsl2-dash{ margin-top:16px; background:#fff; border-top:2px solid var(--c-navy); }
@@ -612,16 +615,14 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   /* 단계 표 → 블록 */
   .contents_div .gsl2-phase thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-  .contents_div .gsl2-phase tbody,
-  .contents_div .gsl2-phase tr{ display:block; }
+  .contents_div .gsl2-phase tbody{ display:block; }
   .contents_div .gsl2-phase tr{ display:grid; grid-template-columns:repeat(3,1fr); padding:14px var(--card-px); border-bottom:1px solid var(--c-line); }
   .contents_div .gsl2-phase tbody th,
   .contents_div .gsl2-phase td{ display:block; padding:0; border:0; text-align:left; }
   .contents_div .gsl2-phase tbody th{ grid-column:1 / -1; font-size:var(--fs-info); }
-  .contents_div .gsl2-phase td.gsl2-route{ grid-column:1 / -1; margin:4px 0 10px; }
+  .contents_div .gsl2-phase td.gsl2-route{ grid-column:1 / -1; margin:6px 0 12px; }
   .contents_div .gsl2-stops{ text-wrap:wrap; }
   .contents_div .gsl2-phase td[data-label]::before{ content:attr(data-label); display:block; font-size:var(--fs-label); font-weight:700; line-height:1.4; color:var(--c-sub); }
-  .contents_div .gsl2-phase td.gsl2-route{ margin:6px 0 12px; }
   .contents_div .gsl2-phase td{ font-size:var(--fs-info); }
   .contents_div .gsl2-phase th + td,
   .contents_div .gsl2-phase td + td{ border-left:0; }
@@ -680,8 +681,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-eco td{ padding:10px 12px; }
 
   .contents_div .gsl2-faq{ margin-top:20px; }
-  .contents_div .gsl2-faq-q{ padding:16px 32px 16px 0; }
-  .contents_div .gsl2-faq-q{ display:flex; align-items:center; min-height:calc(var(--fs-h3) * 3 + 32px); }
+  .contents_div .gsl2-faq-q{ display:flex; align-items:center; min-height:calc(var(--fs-h3) * 3 + 32px); padding:16px 32px 16px 0; }
   .contents_div .gsl2-faq-q .gsl2-chk{ align-items:center; gap:11px; }   /* Q–질문 간격 8 → 11 */
   .contents_div .gsl2-faq-q .gsl2-h3{ padding-top:0; }
   .contents_div .gsl2-faq-q::before,
@@ -893,7 +893,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   <!-- 03 공정률 -->
   <section class="gsl2-sec gsl2-sec--3" id="gsl2-s3">
-    <div class="gsl2-sec-bg" aria-hidden="true"><img src="img/공정률배경.webp" alt="" loading="lazy" decoding="async"></div>
+    <div class="gsl2-sec-bg" aria-hidden="true"><img src="img/히어로배경.webp" alt="" loading="lazy" decoding="async"></div>
     <div class="gsl2-kicker-group">
       <p class="gsl2-kicker"><span class="gsl2-kicker-pin" aria-hidden="true"></span><span class="gsl2-kicker-txt">공정률</span></p>
       <h2 class="gsl2-h2">공사는 얼마나 진행되었나요?</h2>
