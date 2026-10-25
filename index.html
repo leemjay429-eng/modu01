@@ -580,7 +580,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-h1,
   .contents_div .gsl2-h2{ line-height:1.4; }
   .contents_div .gsl2-h2{ font-size:calc(var(--fs-h2) + 2px); }   /* 섹션 제목 +2px */
-  .contents_div .gsl2-h3{ line-height:1.5; }
+  .contents_div .gsl2-h3{ font-size:calc(var(--fs-h3) + 2px); line-height:1.5; }   /* 소제목 +2px */
   .contents_div .gsl2-kicker-txt{ padding:0 12px 0 calc(var(--pin) / 2 + 7px); line-height:1; }
   .contents_div .gsl2-block{ margin-top:32px; }
   .contents_div .gsl2-block--sm{ margin-top:24px; }
@@ -685,7 +685,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-faq{ margin-top:20px; }
   .contents_div .gsl2-faq-q{ display:flex; align-items:center; min-height:calc(var(--fs-h3) * 3 + 32px); padding:16px 32px 16px 0; }
   .contents_div .gsl2-faq-q .gsl2-chk{ align-items:center; gap:11px; }   /* Q–질문 간격 8 → 11 */
-  .contents_div .gsl2-faq-q .gsl2-h3{ padding-top:0; }
+  .contents_div .gsl2-faq-q .gsl2-h3{ padding-top:0; font-size:var(--fs-h3); }   /* FAQ 질문은 +2px 제외 */
   .contents_div .gsl2-faq-q::before,
   .contents_div .gsl2-faq-q::after{ right:4px; width:12px; }
   .contents_div .gsl2-faq-a{ padding:0 0 20px 0; }
