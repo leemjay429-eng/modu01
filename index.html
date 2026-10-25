@@ -219,7 +219,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gsl2-sec.is-in .gsl2-kicker-pin{ animation:gsl2-pin-bounce 2.6s cubic-bezier(.3,0,.4,1) .2s infinite; }
 .contents_div .gsl2-kicker-txt{ position:relative; z-index:1; margin-top:calc((var(--pin) - var(--kick)) / 2 + 5px); margin-left:calc(var(--pin) / -2 - 10px); }
 .contents_div .gsl2-kicker-txt{
-  display:inline-flex; align-items:center; height:var(--kick); padding:0 15px 0 calc(var(--pin) / 2 + 10px);
+  display:inline-flex; align-items:center; height:var(--kick); padding:0 16px 0 calc(var(--pin) / 2 + 9px);   /* 텍스트만 왼쪽 1px — 박스 폭은 그대로 */
   background:var(--c-blue); border:1px solid var(--c-blue); border-radius:3px; color:#fff;
   font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:0.01em;
 }
@@ -463,8 +463,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gsl2-num-list .gsl2-chk-ico{ background:var(--c-deep); }
 
 .contents_div .gsl2-save{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:36px; }
-.contents_div .gsl2-save > li{ padding:20px 18px; background:var(--c-navy); color:#fff; border-radius:3px; font-size:var(--fs-info); line-height:1.5; }
-.contents_div .gsl2-save .gsl2-chk-ico{ background:var(--c-blue-l); color:var(--c-navy); }
+.contents_div .gsl2-save > li{ padding:20px 18px; background:var(--c-navy); color:#fff; border-radius:3px; font-size:var(--fs-info); line-height:1.5; text-align:center; }   /* 웹: 체크·문구 가운데 */
+.contents_div .gsl2-save .gsl2-chk-ico{ margin:0 auto; background:var(--c-blue-l); color:var(--c-navy); }
 .contents_div .gsl2-save p{ margin-top:10px; }
 .contents_div .gsl2-save strong{ color:#a9c6fa; font-weight:800; }
 
@@ -527,7 +527,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* ===== 푸터 ===== */
 .contents_div .gsl2-foot{ background:var(--c-foot); color:#fff; }
-.contents_div .gsl2-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.contents_div .gsl2-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
 .contents_div .gsl2-tags li{
   display:inline-flex; align-items:center; padding:6px 12px;
   border:1px solid rgba(255,255,255,.35); border-radius:3px;
@@ -574,7 +574,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-h1,
   .contents_div .gsl2-h2{ line-height:1.4; }
   .contents_div .gsl2-h3{ line-height:1.5; }
-  .contents_div .gsl2-kicker-txt{ padding:0 11px 0 calc(var(--pin) / 2 + 8px); line-height:1; }
+  .contents_div .gsl2-kicker-txt{ padding:0 12px 0 calc(var(--pin) / 2 + 7px); line-height:1; }
   .contents_div .gsl2-block{ margin-top:32px; }
   .contents_div .gsl2-block--sm{ margin-top:24px; }
 
@@ -668,8 +668,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-cost{ grid-template-columns:1fr; gap:20px; }
   .contents_div .gsl2-split span{ padding:0 8px; }
   .contents_div .gsl2-save{ grid-template-columns:1fr; gap:6px; margin-top:28px; }
-  .contents_div .gsl2-save > li{ display:flex; align-items:flex-start; gap:10px; padding:14px 14px; }
-  .contents_div .gsl2-save .gsl2-chk-ico{ margin-top:calc((1.5em - var(--lb-h)) / 2); }
+  .contents_div .gsl2-save > li{ display:flex; align-items:flex-start; gap:10px; padding:14px 14px; text-align:left; }
+  .contents_div .gsl2-save .gsl2-chk-ico{ margin:calc((var(--fs-info) * 1.5 - var(--lb-h)) / 2) 0 0; }   /* 체크를 첫 줄 가운데에 — 아이콘 자체 글자 크기(em) 말고 본문 줄 높이 기준 */
   .contents_div .gsl2-save p{ margin-top:0; }
   .contents_div .gsl2-effects > li{ padding:16px 0; }
   .contents_div .gsl2-sub{ padding-left:calc(var(--lb-h) + 8px); }
@@ -679,7 +679,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-faq{ margin-top:20px; }
   .contents_div .gsl2-faq-q{ padding:16px 32px 16px 0; }
   .contents_div .gsl2-faq-q{ display:flex; align-items:center; min-height:calc(var(--fs-h3) * 3 + 32px); }
-  .contents_div .gsl2-faq-q .gsl2-chk{ align-items:center; }
+  .contents_div .gsl2-faq-q .gsl2-chk{ align-items:center; gap:11px; }   /* Q–질문 간격 8 → 11 */
   .contents_div .gsl2-faq-q .gsl2-h3{ padding-top:0; }
   .contents_div .gsl2-faq-q::before,
   .contents_div .gsl2-faq-q::after{ right:4px; width:12px; }
@@ -708,8 +708,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-h2{ margin-top:10px; }   /* 키커–제목 간격 14 → 10 */
 }
 </style>
-
-<!-- TEST: 확인 후 이 줄 삭제 --><div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">테스트 영역 · 아래로 스크롤 ↓</b></div>
 
 <article class="gsl2-wrap">
 
@@ -989,7 +987,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       </div>
 
       <ul class="gsl2-save">
-        <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>교통혼잡비용 <strong>연간 1,800억 원</strong> 절감</p></li>
+        <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>교통혼잡비용<span class="gsl2-br gsl2-br--web"></span> <strong>연간 1,800억 원</strong> 절감</p></li>
         <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>중복 노선 감축 등 시내버스 재정지원금 <strong>연간 약 81억 원</strong> 감소 추정</p></li>
         <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span><p>신규 도로 개설 축소에 따른 비용 절감(도로율 10% 향상 시 <strong>2.6조 원</strong> 예상)</p></li>
       </ul>
@@ -1105,7 +1103,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       <li>#확대순환선</li>
       <li>#완전무인운전</li>
       <li>#K-AGT</li>
-      <li>#광주광역시</li>
+      <li>#광주지하철공사</li>
       <li>#전남광주통합특별시</li>
     </ul>
   </footer>
