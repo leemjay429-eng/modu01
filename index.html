@@ -540,6 +540,41 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   font-size:var(--fs-hash); line-height:1.35; color:#d6e3fb;
 }
 
+/* ===== 스크롤 이벤트 — 히어로 아래 요소가 화면에 들어오면 아래에서 떠오름 ===== */
+/* is-rv는 스크립트가 붙임 — 스크립트가 없거나 모션 줄이기 설정이면 처음부터 다 보임 */
+.contents_div .gsl2-wrap.is-rv .gsl2-rv{
+  opacity:0; transform:translate3d(0,28px,0);
+  transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1);
+  transition-delay:var(--rv-d,0s);
+}
+.contents_div .gsl2-wrap.is-rv .gsl2-rv.is-shown{ opacity:1; transform:none; }
+/* 인트로 타임라인 선이 왼쪽부터 그어짐 */
+.contents_div .gsl2-wrap.is-rv .gsl2-timeline::before{ transform:scaleX(0); transform-origin:0 50%; transition:transform 1.2s cubic-bezier(.3,.6,.2,1) .15s; }
+.contents_div .gsl2-wrap.is-rv .gsl2-timeline.is-shown::before{ transform:none; }
+/* 공정률 막대 — 트랙색 덮개가 오른쪽으로 걷히며 ①전월누계까지 차오르고 ②금월실적만큼 한 번 더 늘어남 */
+.contents_div .gsl2-total-bar{ position:relative; }
+.contents_div .gsl2-wrap.is-rv .gsl2-total-bar::after,
+.contents_div .gsl2-wrap.is-rv .gsl2-bar::after{
+  content:''; position:absolute; inset:0; background:var(--c-track);
+  transform-origin:100% 50%; transition:transform 1.2s cubic-bezier(.3,.6,.2,1) var(--rv-bd,.3s);
+}
+.contents_div .gsl2-wrap.is-rv .gsl2-dash.is-shown .gsl2-total-bar::after,
+.contents_div .gsl2-wrap.is-rv .gsl2-prog.is-shown .gsl2-bar::after{ transform:scaleX(var(--s1,0)); }
+.contents_div .gsl2-wrap.is-rv .gsl2-total-bar.is-full::after,
+.contents_div .gsl2-wrap.is-rv .gsl2-bar.is-full::after{ transform:scaleX(var(--s2,0)); transition:transform .6s cubic-bezier(.3,.6,.2,1); }
+/* 숫자 롤링 — 자릿수마다 숫자 띠가 위로 굴러감 */
+.contents_div .gsl2-count{ display:inline-block; font-variant-numeric:tabular-nums; }
+/* 숫자 칸 높이 = 통합공정률 줄 높이(1.2em), 폭은 숫자 글자 폭 그대로(고정폭 숫자) — 스크립트로 재지 않음 */
+.contents_div .gsl2-roll{
+  display:inline-block; overflow:hidden; vertical-align:top; height:1.2em;
+  -webkit-mask-image:linear-gradient(transparent, #000 14%, #000 86%, transparent); mask-image:linear-gradient(transparent, #000 14%, #000 86%, transparent);   /* 굴러가는 동안 위아래 칸 숫자가 비치지 않게 */
+}
+.contents_div .gsl2-roll-in{ display:block; transition:transform 1.4s cubic-bezier(.2,.75,.15,1); }
+.contents_div .gsl2-roll-in > span{ display:block; height:1.2em; line-height:1.2em; }
+/* 국비·시비 막대가 왼쪽부터 펼쳐짐 */
+.contents_div .gsl2-wrap.is-rv .gsl2-split{ clip-path:inset(0 100% 0 0); transition:clip-path 1.1s cubic-bezier(.3,.6,.2,1) .35s; }
+.contents_div .gsl2-wrap.is-rv .gsl2-cost.is-shown .gsl2-split{ clip-path:inset(0 0 0 0); }
+
 /* ===== 모션 줄이기 ===== */
 @media (prefers-reduced-motion:reduce){
   .contents_div .gsl2-sec.is-in .gsl2-kicker-pin,
@@ -547,6 +582,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gsl2-hero.is-anim .gsl2-hero-board,
   .contents_div .gsl2-hero.is-anim .gsl2-hero-txt,
   .contents_div .gsl2-hero.is-anim .gsl2-hero-shine::before{ animation:none; }
+  .contents_div .gsl2-wrap.is-rv .gsl2-rv{ opacity:1; transform:none; transition:none; }
+  .contents_div .gsl2-wrap.is-rv .gsl2-timeline::before,
+  .contents_div .gsl2-wrap.is-rv .gsl2-total-bar::after,
+  .contents_div .gsl2-wrap.is-rv .gsl2-bar::after{ transform:none; transition:none; }
+  .contents_div .gsl2-wrap.is-rv .gsl2-total-bar::after,
+  .contents_div .gsl2-wrap.is-rv .gsl2-bar::after{ display:none; }
+  .contents_div .gsl2-wrap.is-rv .gsl2-split{ clip-path:none; transition:none; }
 }
 
 /* ===== hover ===== */
@@ -695,6 +737,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   .contents_div .gsl2-tags{ gap:5px; }
   .contents_div .gsl2-tags li{ padding:5px 9px; }
+
+  .contents_div .gsl2-wrap.is-rv .gsl2-rv{ transform:translate3d(0,18px,0); }   /* 스크롤 이벤트: 모바일은 떠오르는 거리 짧게 */
 }
 @media (max-width:480px){
   .contents_div .gsl2-wrap{
@@ -846,7 +890,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
         </li>
         <li>
           <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">02</span><strong>1호선 환승 가능</strong></p>
-          <p class="gsl2-feat-desc">상무역(1호선), 남광주역(일반철도)에서 환승 교통 편의 향상</p>
+          <p class="gsl2-feat-desc">상무역(1호선), 남광주역(일반철도)에서 환승할 수 있어 교통이 편리해집니다.</p>
         </li>
         <li>
           <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">03</span><strong>저심도 승강장</strong></p>
@@ -867,11 +911,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       </ul>
 
       <div class="gsl2-block">
-        <h3 class="gsl2-h3">최첨단 기술이 집약된<span class="gsl2-br gsl2-br--mo"></span> 완전자동무인운전시스템</h3>
+        <h3 class="gsl2-h3">최첨단 기술이 집약된<span class="gsl2-br gsl2-br--mo"></span> 완전 자동 무인 운전 시스템</h3>
         <div class="gsl2-spec-wrap">
           <dl class="gsl2-box">
             <div>
-              <dt class="gsl2-lb">차량 길이</dt>
+              <dt class="gsl2-lb">차량 규격</dt>
               <dd>2.4m(폭)×3.5m(높이)×20.92m(길이) / 1편성</dd>
             </div>
             <div>
@@ -885,8 +929,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
           </dl>
           <ul class="gsl2-dots">
             <li>종합관제실에서<br>실시간 감시·제어</li>
-            <li>편의성·안정성<br>스마트 전동차</li>
-            <li>방풍문·미세먼지<br>자동측정기</li>
+            <li>편의성·안정성을 높인<br>스마트 전동차</li>
+            <li>방풍문·미세먼지<br>자동 측정기</li>
           </ul>
         </div>
       </div>
@@ -1005,10 +1049,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
             <p class="gsl2-chk"><span class="gsl2-chk-ico" aria-hidden="true">✓</span><strong>주요 생활권을 30분 내 신속하게 연결</strong></p>
             <ul class="gsl2-sub">
               <li>도시철도+급행버스 중심의 간선망+지선망 연결</li>
-              <li>도시철도 교통 수송 분담률 <strong>8.7%</strong> 증가 연간 <strong>20만 톤</strong> 도로교통 미세먼지 감소</li>
+              <li>도시철도 교통 수송 분담률 <strong>8.7%</strong> 증가, 연간 <strong>20만 톤</strong> 도로교통 미세먼지 감소</li>
               <li>시민 교통 수혜율 확대 17%(25만 명) → <strong>71%(103만 명)</strong></li>
-              <li>타 교통수단에 비해 저렴하고 정시성, 신속성 확보</li>
-              <li>역세권 주변 상권 형성으로 도심 발전</li>
+              <li>타 교통수단에 비해 저렴하고 정시성·신속성 확보</li>
+              <li>역세권 상권 형성으로 도심 발전</li>
             </ul>
           </li>
           <li>
@@ -1046,16 +1090,16 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
         </details>
 
         <details class="gsl2-faq-item">
-          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">도시철도 2호선 연장<span class="gsl2-br gsl2-br--m420"></span> 사업 배경이 궁금해요</h3></span></summary>
+          <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">개통 일정 조정<span class="gsl2-br gsl2-br--m420"></span> 배경이 궁금해요</h3></span></summary>
           <div class="gsl2-faq-a">
-            <p>공사 중 예상하지 못한 암반과 매설물이 발견됐고, 건축·전기·신호·차량 같은 후속 공정을 함께 맞추는 과정에서 일정을 다시 점검하게 됐어요. 시는 앞으로 남은 공정을 개통까지 통합 관리하고, 일정에 영향을 주는 핵심 공정을 집중적으로 관리하겠다고 밝혔어요.</p>
+            <p>공사 중 예상하지 못한 암반과 매설물이 발견됐고, 건축·전기·신호·차량 같은 후속 공정을 함께 맞추는 과정에서 일정을 다시 점검하게 됐습니다. 앞으로 남은 공정을 개통까지 통합 관리하고, 일정에 영향을 주는 핵심 공정을 집중적으로 관리하겠습니다.</p>
           </div>
         </details>
 
         <details class="gsl2-faq-item">
           <summary class="gsl2-faq-q"><span class="gsl2-chk"><span class="gsl2-faq-mark" aria-hidden="true">Q</span><h3 class="gsl2-h3">2호선 열차가 1호선보다 작다던데</h3></span></summary>
           <div class="gsl2-faq-a">
-            <p>구조가 다릅니다. 2호선은 국내 기술로 만든 고무차륜 경전철(K-AGT)이에요. 1편성(2량)은 길이 약 20.9m, 폭 2.4m이고, 정원은 114명(혼잡도 150%일 때 최대 153명)이에요. 대신 열차가 더 자주 오는 방식으로 운영할 계획입니다.</p>
+            <p>구조가 다릅니다. 2호선은 국내 기술로 만든 고무차륜 경전철(K-AGT)입니다. 1편성(2량)은 길이 약 20.9m, 폭 2.4m이고, 정원은 114명(혼잡도 150%일 때 최대 153명)입니다. 대신 열차가 더 자주 오는 방식으로 운영할 계획입니다.</p>
           </div>
         </details>
 
@@ -1064,12 +1108,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
           <div class="gsl2-faq-a">
             <p>시민의 걱정을 알기에 더 단단하고 꼼꼼하게 대비합니다.</p>
             <ul class="gsl2-num-list">
-              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>전 구간 개통에 필요한 사업비 단계적으로 재검토</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>전 구간 개통에 필요한 사업비를 단계적으로 재검토</li>
               <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>실제 공정에 맞춰 연차별 투자 계획을 합리적으로 재조정</li>
               <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>개통 시점까지의 전체 과정을 통합 관리</li>
               <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>핵심 공정을 집중 관리해 공정 지연 최소화</li>
               <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>매월 공정 진행 현황 발표</li>
-              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>사업 추진 현황 시민에게 투명하게 공개</li>
+              <li><span class="gsl2-chk-ico" aria-hidden="true">✓</span>사업 추진 현황을 시민에게 투명하게 공개</li>
             </ul>
           </div>
         </details>
@@ -1081,13 +1125,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
               <p class="gsl2-call-head">[시민 불편 신고]</p>
               <p class="gsl2-call-tit">전화 접수: 공구별 연락처</p>
               <dl class="gsl2-call">
-                <div><dt>차량기지</dt><dd><a href="tel:062-613-6453">062)613-6453</a></dd></div>
-                <div><dt>1공구</dt><dd><a href="tel:062-613-6627">062)613-6627</a></dd></div>
-                <div><dt>2공구</dt><dd><a href="tel:062-613-6612">062)613-6612</a></dd></div>
-                <div><dt>3공구</dt><dd><a href="tel:062-613-6405">062)613-6405</a></dd></div>
-                <div><dt>4공구</dt><dd><a href="tel:062-613-6632">062)613-6632</a></dd></div>
-                <div><dt>5공구</dt><dd><a href="tel:062-613-6637">062)613-6637</a></dd></div>
-                <div><dt>6공구</dt><dd><a href="tel:062-613-6408">062)613-6408</a></dd></div>
+                <div><dt>차량기지</dt><dd><a href="tel:062-613-6453">062-613-6453</a></dd></div>
+                <div><dt>1공구</dt><dd><a href="tel:062-613-6627">062-613-6627</a></dd></div>
+                <div><dt>2공구</dt><dd><a href="tel:062-613-6612">062-613-6612</a></dd></div>
+                <div><dt>3공구</dt><dd><a href="tel:062-613-6405">062-613-6405</a></dd></div>
+                <div><dt>4공구</dt><dd><a href="tel:062-613-6632">062-613-6632</a></dd></div>
+                <div><dt>5공구</dt><dd><a href="tel:062-613-6637">062-613-6637</a></dd></div>
+                <div><dt>6공구</dt><dd><a href="tel:062-613-6408">062-613-6408</a></dd></div>
               </dl>
               <p class="gsl2-call-tit gsl2-web">인터넷 접수: 민원 신청</p>
               <p>국민신문고 및 안전신문고 앱에서 접수 가능</p>
@@ -1171,13 +1215,155 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     if(!sets.length) return;
     function fit(){
       sets.forEach(function(o){
-        var s = o.sec.getBoundingClientRect(), d = o.ref.getBoundingClientRect();
-        o.bg.style.height = Math.round(d.top - s.top + d.height / 2) + 'px';
+        var y = 0, el = o.ref;   /* 스크롤 이벤트로 블록이 움직여도 흔들리지 않게 offsetTop 기준 */
+        while(el && el !== o.sec){ y += el.offsetTop; el = el.offsetParent; }
+        if(el !== o.sec){ y = o.ref.getBoundingClientRect().top - o.sec.getBoundingClientRect().top; }
+        o.bg.style.height = Math.round(y + o.ref.offsetHeight / 2) + 'px';
       });
     }
     fit();
     if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fit)['catch'](function(){}); }
     if(window.ResizeObserver){ new ResizeObserver(fit).observe(wrap || root); }
+  })();
+
+  /* 스크롤 이벤트: 히어로 아래 요소가 화면에 들어오면 떠오름 (한 번만) */
+  (function(){
+    var wrap = root.querySelector('.gsl2-wrap');
+    if(!wrap || !('IntersectionObserver' in window)) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var fade = [
+      '.gsl2-facts > div', '.gsl2-timeline li',
+      '.gsl2-sec .gsl2-kicker', '.gsl2-sec .gsl2-h2',
+      '.gsl2-map', '.gsl2-phase tbody tr', '.gsl2-open',
+      '.gsl2-feats > li', '.gsl2-block > .gsl2-h3', '.gsl2-box', '.gsl2-dots > li',
+      '.gsl2-prog-head', '.gsl2-dash', '.gsl2-prog', '.gsl2-cta',
+      '.gsl2-cost', '.gsl2-save > li', '.gsl2-effects > li',
+      '.gsl2-faq-item', '.gsl2-tags'
+    ];
+    var trig = ['.gsl2-timeline'];   /* 떠오르지 않고 내부 연출만 */
+    var els = [];
+    function add(sel, cls){
+      wrap.querySelectorAll(sel).forEach(function(el){
+        if(el.closest('.gsl2-hero')) return;
+        if(cls) el.classList.add(cls);
+        if(els.indexOf(el) < 0) els.push(el);
+      });
+    }
+    fade.forEach(function(sel){ add(sel, 'gsl2-rv'); });
+    trig.forEach(function(sel){ add(sel); });
+    /* 분야별 표 막대는 위에서부터 차례로 */
+    wrap.querySelectorAll('.gsl2-prog .gsl2-bar').forEach(function(b, i){ b.style.setProperty('--rv-bd', (0.3 + i * 0.06).toFixed(2) + 's'); });
+    wrap.classList.add('is-rv');
+
+    /* 막대 2단계: --s1 = 전월누계까지, --s2 = 금월누계까지 (덮개 남는 비율) */
+    function setBar(bar, a, b){
+      bar.style.setProperty('--s1', Math.max(0, 1 - a / 100).toFixed(4));
+      bar.style.setProperty('--s2', Math.max(0, 1 - (a + b) / 100).toFixed(4));
+    }
+    var bars = [];
+    wrap.querySelectorAll('.gsl2-prog .gsl2-bar').forEach(function(bar, i){
+      setBar(bar, parseFloat(bar.style.getPropertyValue('--a')) || 0, parseFloat(bar.style.getPropertyValue('--b')) || 0);
+      bars.push({ el:bar, host:bar.closest('.gsl2-prog'), wait:300 + i * 60 });
+    });
+    var tb = wrap.querySelector('.gsl2-total-bar'), lg = wrap.querySelectorAll('.gsl2-legend dd');
+    if(tb && lg.length > 1){
+      setBar(tb, parseFloat(lg[0].textContent) || 0, parseFloat(lg[1].textContent) || 0);
+      bars.push({ el:tb, host:tb.closest('.gsl2-dash'), wait:300 });
+    }
+    function fillBars(host, instant){
+      bars.forEach(function(o){
+        if(o.host !== host) return;
+        if(instant){ o.el.classList.add('is-full'); return; }
+        setTimeout(function(){ o.el.classList.add('is-full'); }, o.wait + 1200);
+      });
+    }
+
+    function show(el, delay){
+      if(delay) el.style.setProperty('--rv-d', delay + 's');
+      el.classList.add('is-shown');
+      fillBars(el, delay === null);
+    }
+    var rio = new IntersectionObserver(function(entries){
+      var k = 0;   /* 같이 들어온 요소끼리 순서대로 살짝 시차 */
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          show(en.target, Math.min(k++ * 0.08, 0.4));
+          rio.unobserve(en.target);
+        } else if(en.boundingClientRect.top < 0){   /* 이미 지나간 위치(새로고침 등)는 바로 표시 */
+          var t = en.target;
+          t.style.transition = 'none';
+          show(t, null);
+          void t.offsetWidth; t.style.transition = '';
+          rio.unobserve(t);
+        }
+      });
+    }, { rootMargin:'0px 0px -5% 0px', threshold:0.12 });
+    els.forEach(function(el){ rio.observe(el); });
+
+    /* 숫자 카운트업 — 총사업비만 (한 번만). 숫자만 0부터 세고 '조·억·원'은 그대로, 폭 고정해 옆 글자가 밀리지 않게 */
+    (function(){
+      var el = wrap.querySelector('.gsl2-cost-val');
+      if(!el || !el.firstChild || el.firstChild.nodeType !== 3) return;
+      var src = el.firstChild.nodeValue, box = document.createElement('span');
+      box.className = 'gsl2-count'; box.textContent = src;
+      el.replaceChild(box, el.firstChild);
+      function draw(k){
+        box.textContent = src.replace(/\d[\d,]*/g, function(m){
+          var v = Math.round(parseFloat(m.replace(/,/g, '')) * k) + '';
+          return m.indexOf(',') > -1 ? v.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : v;
+        });
+      }
+      draw(0);
+      var io = new IntersectionObserver(function(en){
+        if(!en[0].isIntersecting) return;
+        io.disconnect();
+        draw(1); box.style.minWidth = Math.ceil(box.getBoundingClientRect().width) + 'px';
+        draw(0);
+        var t0 = null;
+        requestAnimationFrame(function step(t){
+          if(t0 === null) t0 = t;
+          var k = Math.min((t - t0) / 1200, 1);
+          draw(1 - Math.pow(1 - k, 3));
+          if(k < 1) requestAnimationFrame(step); else box.style.minWidth = '';
+        });
+      }, { threshold:0.6 });
+      io.observe(el);
+    })();
+
+    /* 숫자 롤링 — 통합공정률만 (한 번만)
+       자릿수마다 0~9 띠가 위로 굴러가 실제 숫자에서 멈춤. '조·억·원·%·,·.'은 그대로 */
+    ['.gsl2-total-val'].forEach(function(sel){
+      var el = wrap.querySelector(sel);
+      if(!el || !el.firstChild || el.firstChild.nodeType !== 3) return;
+      var txt = el.firstChild, src = txt.nodeValue, cols = [], n = 0;
+      /* 처음부터 롤링 틀을 만들어 0에 세워 둠 — 나타날 때 최종값이 먼저 보였다 굴러가는 깜빡임 방지 */
+      var box = document.createElement('span');
+      box.setAttribute('aria-label', src);
+      src.split('').forEach(function(ch){
+        if(!/\d/.test(ch)){ box.appendChild(document.createTextNode(ch)); return; }
+        var w = document.createElement('span'), strip = document.createElement('span');
+        w.className = 'gsl2-roll'; w.setAttribute('aria-hidden', 'true');
+        strip.className = 'gsl2-roll-in';
+        for(var r = 0; r < 20; r++){ var d = document.createElement('span'); d.textContent = r % 10; strip.appendChild(d); }
+        w.appendChild(strip); box.appendChild(w);
+        cols.push({ w:w, strip:strip, d:+ch, i:n++ });
+      });
+      el.replaceChild(box, txt);
+      var io = new IntersectionObserver(function(en){
+        if(!en[0].isIntersecting) return;
+        io.disconnect();
+        box.getBoundingClientRect();   /* 시작 위치(0) 확정 */
+        var last = null;
+        cols.forEach(function(c){
+          c.strip.style.transitionDelay = (c.i * 0.07) + 's';
+          c.strip.style.transform = 'translateY(' + (-(10 + c.d) * 1.2) + 'em)';   /* 한 바퀴 돌고 멈춤 — em 단위라 글꼴 로딩·화면 폭과 무관 */
+          last = c.strip;
+        });
+        function done(){ if(box.parentNode) el.replaceChild(document.createTextNode(src), box); }   /* 끝나면 원래 텍스트로 */
+        if(last){ last.addEventListener('transitionend', done); setTimeout(done, 3000); } else done();
+      }, { threshold:0.6 });
+      io.observe(el);
+    });
   })();
 
   /* 섹션 진입 시 키커 핀 애니메이션 */
@@ -1232,10 +1418,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     },
     {
       "@type": "Question",
-      "name": "도시철도 2호선 연장 사업 배경이 궁금해요",
+      "name": "개통 일정 조정 배경이 궁금해요",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "공사 중 예상하지 못한 암반과 매설물이 발견됐고, 건축·전기·신호·차량 같은 후속 공정을 함께 맞추는 과정에서 일정을 다시 점검하게 됐어요. 시는 앞으로 남은 공정을 개통까지 통합 관리하고, 일정에 영향을 주는 핵심 공정을 집중적으로 관리하겠다고 밝혔어요."
+        "text": "공사 중 예상하지 못한 암반과 매설물이 발견됐고, 건축·전기·신호·차량 같은 후속 공정을 함께 맞추는 과정에서 일정을 다시 점검하게 됐습니다. 앞으로 남은 공정을 개통까지 통합 관리하고, 일정에 영향을 주는 핵심 공정을 집중적으로 관리하겠습니다."
       }
     },
     {
@@ -1243,7 +1429,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       "name": "2호선 열차가 1호선보다 작다던데",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "구조가 다릅니다. 2호선은 국내 기술로 만든 고무차륜 경전철(K-AGT)이에요. 1편성(2량)은 길이 약 20.9m, 폭 2.4m이고, 정원은 114명(혼잡도 150%일 때 최대 153명)이에요. 대신 열차가 더 자주 오는 방식으로 운영할 계획입니다."
+        "text": "구조가 다릅니다. 2호선은 국내 기술로 만든 고무차륜 경전철(K-AGT)입니다. 1편성(2량)은 길이 약 20.9m, 폭 2.4m이고, 정원은 114명(혼잡도 150%일 때 최대 153명)입니다. 대신 열차가 더 자주 오는 방식으로 운영할 계획입니다."
       }
     },
     {
@@ -1251,7 +1437,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       "name": "개통이 또 미뤄지는 게 아닐까요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "시민의 걱정을 알기에 더 단단하고 꼼꼼하게 대비합니다. 전 구간 개통에 필요한 사업비 단계적으로 재검토 실제 공정에 맞춰 연차별 투자 계획을 합리적으로 재조정 개통 시점까지의 전체 과정을 통합 관리 핵심 공정을 집중 관리해 공정 지연 최소화 매월 공정 진행 현황 발표 사업 추진 현황 시민에게 투명하게 공개"
+        "text": "시민의 걱정을 알기에 더 단단하고 꼼꼼하게 대비합니다. 전 구간 개통에 필요한 사업비를 단계적으로 재검토합니다. 실제 공정에 맞춰 연차별 투자 계획을 합리적으로 재조정합니다. 개통 시점까지의 전체 과정을 통합 관리합니다. 핵심 공정을 집중 관리해 공정 지연을 최소화합니다. 매월 공정 진행 현황을 발표합니다. 사업 추진 현황을 시민에게 투명하게 공개합니다."
       }
     },
     {
@@ -1259,7 +1445,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       "name": "도시철도 2호선으로 인한 불편 신고는 어디로 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "[시민 불편 신고] 전화 접수: 공구별 연락처 차량기지 062)613-6453 1공구 062)613-6627 2공구 062)613-6612 3공구 062)613-6405 4공구 062)613-6632 5공구 062)613-6637 6공구 062)613-6408 인터넷 접수: 민원 신청 국민신문고 및 안전신문고 앱에서 접수 가능"
+        "text": "[시민 불편 신고] 전화 접수(공구별 연락처): 차량기지 062-613-6453, 1공구 062-613-6627, 2공구 062-613-6612, 3공구 062-613-6405, 4공구 062-613-6632, 5공구 062-613-6637, 6공구 062-613-6408. 인터넷 접수(민원 신청): 국민신문고 및 안전신문고 앱에서 접수 가능합니다."
       }
     }
   ]
